@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/styles.css">
+<script src="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/_ds_bundle.js"></script>
+<style>
+:root{
+  --color-bg:#f7f5f0; --color-surface:#edeae2; --color-text:#2c2f3a;
+  --color-accent:#617263; --color-accent-100:#eef1ec; --color-accent-600:#51604f;
+  --color-accent-700:#414d40; --tan:#7a674f;
+  --color-divider:color-mix(in srgb, #2c2f3a 20%, transparent);
+  --font-heading-weight:600;
+}
+body{margin:0;-webkit-font-smoothing:antialiased}
+a{color:#3d4869}
+a:hover{color:var(--color-accent-700)}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--color-surface);color:var(--color-text);font-family:var(--font-body);padding:40px clamp(20px,4vw,40px) 64px">
+  <div style="max-width:1180px;margin:0 auto">
+    <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Mobile preview</p>
+    <h1 style="font-family:var(--font-heading);font-weight:600;font-size:30px;letter-spacing:-0.02em;margin:0 0 10px">evoke psychotherapy on a phone</h1>
+    <p style="font-size:15px;max-width:60ch;margin:0 0 28px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Each frame is the live site at 390&times;844, the size of a standard iPhone. Scroll inside a frame to read the whole page.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px">
+      <sc-for list="{{ pages }}" as="p" hint-placeholder-count="4">
+        <button onClick="{{ p.select }}" style="{{ p.btnStyle }}">{{ p.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start">
+      <div style="flex:0 0 auto;width:412px;height:866px;border:11px solid #2c2f3a;border-radius:44px;overflow:hidden;background:#2c2f3a;box-shadow:0 24px 60px rgba(44,47,58,0.28)">
+        <iframe src="{{ activeSrc }}" title="Mobile preview" style="width:390px;height:844px;border:0;display:block;background:var(--color-bg)"></iframe>
+      </div>
+      <div style="flex:1 1 300px;min-width:260px">
+        <div style="border-top:2px solid var(--color-divider);padding:20px 0;border-bottom:1px solid var(--color-divider)">
+          <h4 style="font-size:16px;margin:0 0 6px">Now showing</h4>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ activeLabel }}</p>
+        </div>
+        <div style="padding:20px 0;border-bottom:1px solid var(--color-divider)">
+          <h4 style="font-size:16px;margin:0 0 6px">What changes at this width</h4>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Two-column sections stack, the nav links wrap to a second compact row with the booking button held to the right, section padding tightens, and the logo scales down with the screen.</p>
+        </div>
+        <div style="padding:20px 0;border-bottom:2px solid var(--color-divider)">
+          <h4 style="font-size:16px;margin:0 0 6px">Links work</h4>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Tap the nav inside the frame to move between pages exactly as a visitor would.</p>
+        </div>
+        <p style="font-size:13px;margin:24px 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent)">This page is a viewing tool, not part of the site.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PAGES = [
+  { label: "Home", src: "index.dc.html" },
+  { label: "About", src: "About.dc.html" },
+  { label: "Services", src: "Services.dc.html" },
+  { label: "Contact & FAQ", src: "Contact.dc.html" }
+];
+
+class Component extends DCLogic {
+  state = { i: 0 };
+  renderVals() {
+    const i = this.state.i;
+    return {
+      activeSrc: encodeURI(PAGES[i].src),
+      activeLabel: PAGES[i].label,
+      pages: PAGES.map((p, n) => ({
+        label: p.label,
+        select: () => this.setState({ i: n }),
+        btnStyle: {
+          padding: "11px 20px",
+          fontFamily: "var(--font-heading)",
+          fontWeight: 600,
+          fontSize: "14px",
+          cursor: "pointer",
+          border: n === i ? "1px solid var(--color-accent)" : "1px solid var(--color-divider)",
+          background: n === i ? "var(--color-accent)" : "transparent",
+          color: n === i ? "#fff" : "var(--color-text)"
+        }
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

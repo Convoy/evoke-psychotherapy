@@ -34,22 +34,22 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
 <div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6">
 
   <header style="position:sticky;top:0;z-index:20;background:var(--color-bg);border-bottom:2px solid var(--color-divider)">
-    <div style="max-width:1180px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
-      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:118px;width:auto">
+    <div style="max-width:1180px;margin:0 auto;padding:10px clamp(16px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,1.6vw,24px);flex-wrap:nowrap">
+      <a href="index.dc.html" style="flex:0 0 auto;display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:clamp(46px,7.5vw,118px);width:auto">
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
-        <a href="index.html" style="font-size:14px;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Home</a>
-        <a href="About.dc.html" style="font-size:14px;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">About</a>
-        <a href="Services.dc.html" style="font-size:14px;text-decoration:none;color:var(--color-accent-700);font-weight:600">Services</a>
-        <a href="Contact.dc.html" style="font-size:14px;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Contact &amp; FAQ</a>
-        <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" style-hover="background:var(--color-accent-600)">Book a session</a>
+      <nav style="flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:clamp(10px,1.6vw,28px);flex-wrap:wrap;row-gap:0">
+        <a href="index.dc.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Home</a>
+        <a href="About.dc.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">About</a>
+        <a href="Services.dc.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600">Services</a>
+        <a href="Contact.dc.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Contact &amp; FAQ</a>
+        <a href="Contact.dc.html" style="flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;padding:11px 18px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" style-hover="background:var(--color-accent-600)">Book a session</a>
       </nav>
     </div>
   </header>
 
   <section style="border-bottom:2px solid var(--color-divider)">
-    <div style="max-width:1180px;margin:0 auto;padding:76px 32px 64px">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,32px) clamp(40px,6vw,64px)">
       <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 22px">Services</p>
       <h1 style="font-size:clamp(34px,4.2vw,54px);line-height:1.1;margin:0 0 22px;max-width:18ch;text-wrap:pretty">Three ways to work together.</h1>
       <p style="font-size:18px;max-width:56ch;margin:0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Therapy for adults and couples navigating hard seasons, and supervision for clinicians building a career.</p>
@@ -57,7 +57,7 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
   </section>
 
   <section id="therapy" style="border-bottom:2px solid var(--color-divider)">
-    <div style="max-width:1180px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:64px;align-items:start">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:start">
       <div>
         <p style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">01 &mdash; For clients</p>
         <h2 style="font-size:clamp(26px,3vw,34px);margin:0">Individual therapy</h2>
@@ -77,7 +77,7 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
   </section>
 
   <section id="couples" style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
-    <div style="max-width:1180px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:64px;align-items:start">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:start">
       <div>
         <p style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">02 &mdash; For couples</p>
         <h2 style="font-size:clamp(26px,3vw,34px);margin:0">Couples therapy</h2>
@@ -97,7 +97,7 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
   </section>
 
   <section id="supervision" style="border-bottom:2px solid var(--color-divider)">
-    <div style="max-width:1180px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:64px;align-items:start">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:start">
       <div>
         <p style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">03 &mdash; For clinicians</p>
         <h2 style="font-size:clamp(26px,3vw,34px);margin:0">Clinical supervision</h2>
@@ -117,12 +117,12 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
   </section>
 
   <section id="insurance" style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
-    <div style="max-width:1180px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:64px;align-items:start">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:start">
       <div>
         <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Rates &amp; insurance</p>
         <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 75%,transparent)">Cost should not be the reason someone stops looking. If none of these fit, say so and we will work something out.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 40px;border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+      <div style="flex:1 1 480px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 40px;border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
         <div style="padding:30px 0">
           <h4 style="font-size:16px;margin:0 0 10px">Insurance</h4>
           <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Several major Michigan plans are accepted. Reach out with your carrier and we will confirm coverage before your first session.</p>
@@ -140,19 +140,19 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
   </section>
 
   <section style="background:var(--color-accent);color:#fff">
-    <div style="max-width:1180px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:48px;align-items:center">
       <div>
         <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 14px;max-width:24ch;color:#fff;text-wrap:pretty">Not sure which of these you need?</h2>
         <p style="margin:0;font-size:17px;max-width:52ch;color:rgba(255,255,255,0.92)">That is a good enough reason to call. Fifteen minutes, no cost.</p>
       </div>
-      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" style-hover="background:var(--color-accent-100)">Book a consult</a>
+      <a href="Contact.dc.html" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" style-hover="background:var(--color-accent-100)">Book a consult</a>
     </div>
   </section>
 
   <footer style="border-top:2px solid var(--color-divider);background:var(--color-bg)">
-    <div style="max-width:1180px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;align-items:start">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;align-items:start">
       <div>
-        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:120px;width:auto;margin-bottom:14px">
+        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:clamp(80px,14vw,120px);width:auto;margin-bottom:14px">
         <p style="margin:0;font-size:13px;color:color-mix(in srgb,var(--color-text) 62%,transparent)">evoke psychotherapy, pllc</p>
       </div>
       <div>
@@ -165,11 +165,11 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
       </div>
       <div>
         <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Pages</h4>
-        <p style="margin:0;font-size:15px;line-height:1.9"><a href="index.html" style="text-decoration:none">Home</a><br><a href="About.dc.html" style="text-decoration:none">About</a><br><a href="Contact.dc.html" style="text-decoration:none">Contact &amp; FAQ</a></p>
+        <p style="margin:0;font-size:15px;line-height:1.9"><a href="index.dc.html" style="text-decoration:none">Home</a><br><a href="About.dc.html" style="text-decoration:none">About</a><br><a href="Contact.dc.html" style="text-decoration:none">Contact &amp; FAQ</a></p>
       </div>
     </div>
     <div style="border-top:1px solid var(--color-divider)">
-      <div style="max-width:1180px;margin:0 auto;padding:20px 32px;font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">If you are in crisis, call or text 988 for the Suicide &amp; Crisis Lifeline, or go to your nearest emergency room.</div>
+      <div style="max-width:1180px;margin:0 auto;padding:20px clamp(20px,4vw,32px);font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">If you are in crisis, call or text 988 for the Suicide &amp; Crisis Lifeline, or go to your nearest emergency room.</div>
     </div>
   </footer>
 
