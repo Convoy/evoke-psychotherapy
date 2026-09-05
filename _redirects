@@ -1,1 +1,4 @@
 /   /index.dc.html   200
+https://evoke-pschotherapy.netlify.app/*   https://evokepsychotherapy.com/:splat   301!
+https://evokelpc.com/*                     https://evokepsychotherapy.com/:splat   301!
+https://www.evokelpc.com/*                 https://evokepsychotherapy.com/:splat   301!
