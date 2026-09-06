@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/styles.css">
+<script src="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+:root{
+  --color-bg:#f7f5f0; --color-surface:#edeae2; --color-text:#2c2f3a;
+  --color-accent:#617263; --color-accent-100:#eef1ec; --color-accent-200:#dbe1d9;
+  --color-accent-300:#bcc7ba; --color-accent-400:#8d9c8c; --color-accent-500:#617263;
+  --color-accent-600:#51604f; --color-accent-700:#414d40; --color-accent-800:#333d33;
+  --color-accent-900:#262e26;
+  --indigo:#576594; --indigo-deep:#3d4869; --tan:#7a674f; --tan-soft:#e2d7c9;
+  --color-divider:color-mix(in srgb, #2c2f3a 20%, transparent);
+  --font-heading-weight:600;
+}
+body{margin:0;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+a{color:var(--indigo-deep);text-underline-offset:3px}
+a:hover{color:var(--color-accent-700)}
+h1,h2,h3,h4{letter-spacing:-0.02em}
+</style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6">
+
+  <header style="position:sticky;top:0;z-index:20;background:var(--color-bg);border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:10px clamp(16px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,1.6vw,24px);flex-wrap:nowrap">
+      <a href="index.html" style="flex:0 0 auto;display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:clamp(46px,7.5vw,118px);width:auto">
+      </a>
+      <nav style="flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:clamp(10px,1.6vw,28px);flex-wrap:wrap;row-gap:0">
+        <a href="index.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Home</a>
+        <a href="about.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600">About</a>
+        <a href="services.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Services</a>
+        <a href="contact.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Contact &amp; FAQ</a>
+        <a href="contact.html" style="flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;padding:11px 18px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" style-hover="background:var(--color-accent-600)">Book a session</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(20px,4vw,32px) clamp(40px,6vw,64px)">
+      <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 22px">About</p>
+      <h1 style="font-size:clamp(34px,4.2vw,54px);line-height:1.1;margin:0;max-width:19ch;text-wrap:pretty">From the operating room to the therapy room.</h1>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px)">
+      <div style="max-width:900px">
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:32px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 28px">Welcome!</p>
+        <figure style="float:left;width:330px;max-width:100%;margin:4px 36px 28px 0">
+          <div style="width:100%;aspect-ratio:4/5;position:relative">
+            <image-slot id="evoke-portrait" src="assets/evoke-portrait.webp" shape="rect" placeholder="Drop a portrait of the therapist"></image-slot>
+          </div>
+          <figcaption style="border-top:2px solid var(--color-divider);margin-top:20px;padding-top:18px">
+            <h4 style="font-size:19px;margin:0 0 4px">Lori Guidone, PA, MA, LPC</h4>
+            <p style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--tan);margin:0">Founder &amp; Clinical Director</p>
+          </figcaption>
+        </figure>
+        <p style="font-size:17px;margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">I began my career as a Physician Associate in Cardiac Surgery and Neurosurgery, which gave me deep insight into the unique pressures medical professionals face.</p>
+        <p style="font-size:17px;margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">That background shapes how I work today as a therapist, understanding the intensity, the moral weight, and the toll that modern life and careers can take on individuals and relationships.</p>
+        <p style="font-size:17px;margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">I work best with intellectually curious people who are ready to do depth work and explore what matters most. My approach is warm, direct, and supportive. It draws on attachment theory and psychodynamic and Jungian thought. I utilize tools such as Circle of Security, AEDP (Accelerated Experiential Dynamic Psychotherapy), Brainspotting, and Motivational Interviewing.</p>
+        <p style="font-size:17px;margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Having trained at the Ainsworth Attachment Clinic, my lens is decidedly relational and attachment focused. I believe that all of our patterns, adaptive and maladaptive alike, come from the original intersubjective field. It is by turning our head, so to speak, toward that fact that we can understand and unravel the patterns that no longer work for us.</p>
+        <p style="font-size:17px;margin:0 0 40px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">My practice offers a free fifteen-minute phone or Zoom consultation to explore whether we&rsquo;d be a good fit. I look forward to hearing from you.</p>
+        <div style="clear:both;border-top:2px solid var(--color-divider);padding-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px">
+          <div>
+            <h4 style="font-size:17px;margin:0 0 12px">How I work</h4>
+            <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Sessions move at your pace. Nothing gets forced, and nothing on your mind is off the table. I draw on relational, trauma-informed, and somatic approaches, adapted to what you actually need rather than to a fixed protocol.</p>
+          </div>
+          <div>
+            <h4 style="font-size:17px;margin:0 0 12px">Who belongs here</h4>
+            <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Clients of every background, body, faith, and orientation are welcome. The practice is LGBTQ+ affirming, and works with young adults through elders, couples, and people carrying the weight of caregiving professions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px">
+      <div style="flex:0 1 300px">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">The practice</p>
+        <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 75%,transparent)">evoke psychotherapy, pllc is a small independent practice in downtown Kalamazoo.</p>
+      </div>
+      <div style="flex:1 1 480px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 40px;border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+        <div style="padding:28px 0">
+          <h4 style="font-size:16px;margin:0 0 8px">Small by design</h4>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">A limited caseload, so the work stays attentive.</p>
+        </div>
+        <div style="padding:28px 0">
+          <h4 style="font-size:16px;margin:0 0 8px">Two rooms</h4>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">A quiet Michigan Avenue office, and secure telehealth statewide.</p>
+        </div>
+        <div style="padding:28px 0">
+          <h4 style="font-size:16px;margin:0 0 8px">Teaching too</h4>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Supervision for the next generation of Michigan clinicians.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--color-accent);color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+      <div style="flex:0 1 300px">
+        <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 14px;max-width:22ch;color:#fff;text-wrap:pretty">Curious whether we are a fit?</h2>
+        <p style="margin:0;font-size:17px;max-width:52ch;color:rgba(255,255,255,0.92)">Start with a free fifteen-minute call. No cost, no obligation.</p>
+      </div>
+      <a href="contact.html" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" style-hover="background:var(--color-accent-100)">Book a consult</a>
+    </div>
+  </section>
+
+  <footer style="border-top:2px solid var(--color-divider);background:var(--color-bg)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;align-items:start">
+      <div>
+        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:clamp(80px,14vw,120px);width:auto;margin-bottom:14px">
+        <p style="margin:0;font-size:13px;color:color-mix(in srgb,var(--color-text) 62%,transparent)">evoke psychotherapy, pllc</p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Office</h4>
+        <p style="margin:0;font-size:15px;line-height:1.7">161 East Michigan Avenue<br>Suite 400N<br>Kalamazoo, MI 49007</p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Contact</h4>
+        <p style="margin:0;font-size:15px;line-height:1.9"><a href="tel:2699297486" style="text-decoration:none">269-929-7486</a><br><a href="mailto:lori@evokepsychotherapy.com" style="text-decoration:none">lori@evokepsychotherapy.com</a></p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Pages</h4>
+        <p style="margin:0;font-size:15px;line-height:1.9"><a href="index.html" style="text-decoration:none">Home</a><br><a href="services.html" style="text-decoration:none">Services</a><br><a href="contact.html" style="text-decoration:none">Contact &amp; FAQ</a></p>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:20px clamp(20px,4vw,32px);font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">If you are in crisis, call or text 988 for the Suicide &amp; Crisis Lifeline, or go to your nearest emergency room.</div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+</body>
+</html>

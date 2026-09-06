@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/styles.css">
+<script src="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+:root{
+  --color-bg:#f7f5f0; --color-surface:#edeae2; --color-text:#2c2f3a;
+  --color-accent:#617263; --color-accent-100:#eef1ec; --color-accent-200:#dbe1d9;
+  --color-accent-300:#bcc7ba; --color-accent-400:#8d9c8c; --color-accent-500:#617263;
+  --color-accent-600:#51604f; --color-accent-700:#414d40; --color-accent-800:#333d33;
+  --color-accent-900:#262e26;
+  --indigo:#576594; --indigo-deep:#3d4869; --tan:#7a674f; --tan-soft:#e2d7c9;
+  --color-divider:color-mix(in srgb, #2c2f3a 20%, transparent);
+  --font-heading-weight:600;
+}
+body{margin:0;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+a{color:var(--indigo-deep);text-underline-offset:3px}
+a:hover{color:var(--color-accent-700)}
+h1,h2,h3,h4{letter-spacing:-0.02em}
+</style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6">
+
+  <header style="position:sticky;top:0;z-index:20;background:var(--color-bg);border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:10px clamp(16px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,1.6vw,24px);flex-wrap:nowrap">
+      <a href="index.html" style="flex:0 0 auto;display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:clamp(46px,7.5vw,118px);width:auto">
+      </a>
+      <nav style="flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:clamp(10px,1.6vw,28px);flex-wrap:wrap;row-gap:0">
+        <a href="index.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600">Home</a>
+        <a href="about.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">About</a>
+        <a href="services.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Services</a>
+        <a href="contact.html" style="flex:0 0 auto;padding:11px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">Contact &amp; FAQ</a>
+        <a href="contact.html" style="flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;padding:11px 18px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" style-hover="background:var(--color-accent-600)">Book a session</a>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ heroOverlay }}" hint-placeholder-val="{{ true }}">
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="position:relative;min-height:640px;display:flex;align-items:center">
+      <div style="position:absolute;inset:0">
+        <image-slot id="evoke-hero" src="assets/evoke-hero.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
+      </div>
+      <div style="{{ scrimStyle }}"></div>
+      <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,32px);pointer-events:none">
+        <div style="pointer-events:auto;max-width:640px;background:rgba(247,245,240,0.95);border:2px solid var(--color-divider);padding:clamp(30px,5vw,52px) clamp(22px,4.5vw,48px)">
+          <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 24px">Kalamazoo, Michigan &middot; In person &amp; telehealth statewide</p>
+          <h1 style="font-size:clamp(36px,4.2vw,54px);line-height:1.1;margin:0 0 24px;max-width:17ch;text-wrap:pretty">Therapy that meets you where you are.</h1>
+          <p style="font-size:18px;line-height:1.65;max-width:50ch;margin:0 0 34px;color:color-mix(in srgb,var(--color-text) 85%,transparent)">Individual therapy for adults, and clinical supervision for limited licensed counselors. Unhurried, collaborative, and built on the belief that you already carry a great deal of what you need.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+            <a href="contact.html" style="display:inline-flex;align-items:center;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-600)">Book a free 15-minute consult</a>
+            <a href="services.html" style="display:inline-flex;align-items:center;padding:16px 28px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-100)">See services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ false }}">
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:56px;align-items:center">
+      <div style="flex:1 1 420px;padding:clamp(56px,8vw,88px) 0">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 26px">Kalamazoo, Michigan &middot; In person &amp; telehealth statewide</p>
+        <h1 style="font-size:clamp(38px,4.6vw,58px);line-height:1.1;margin:0 0 26px;max-width:17ch;text-wrap:pretty">Therapy that meets you where you are.</h1>
+        <p style="font-size:19px;line-height:1.65;max-width:52ch;margin:0 0 36px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Individual therapy for adults, and clinical supervision for limited licensed counselors. Unhurried, collaborative, and built on the belief that you already carry a great deal of what you need.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+          <a href="contact.html" style="display:inline-flex;align-items:center;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-600)">Book a free 15-minute consult</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;padding:16px 28px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-100)">See services</a>
+        </div>
+      </div>
+      <div style="flex:1 1 400px;align-self:stretch;min-height:480px;position:relative;border-left:2px solid var(--color-divider)">
+        <image-slot id="evoke-hero" src="assets/evoke-hero.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:start">
+      <div style="flex:0 1 300px">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">If this sounds like you</p>
+      </div>
+      <div style="flex:1 1 480px">
+        <p style="font-size:22px;line-height:1.55;max-width:56ch;margin:0 0 24px;text-wrap:pretty">You have been holding it together for a long time, and it is starting to cost more than it used to.</p>
+        <p style="font-size:17px;line-height:1.7;max-width:58ch;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Maybe the anxiety does not switch off at the end of the day. Maybe something from years ago still sits in your body, and you have never quite had the words for it. Maybe you are good at your job, good at caring for other people, and quietly running on empty.</p>
+        <p style="font-size:17px;line-height:1.7;max-width:58ch;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">You do not have to arrive with it organized. Bringing it in unfinished is the work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:center">
+      <div style="flex:1 1 420px;padding:clamp(52px,7vw,80px) 0">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Individual therapy</p>
+        <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 20px;max-width:18ch;text-wrap:pretty">Weekly work, at your pace.</h2>
+        <p style="font-size:17px;max-width:52ch;margin:0 0 28px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Fifty-three-minute sessions for adults working through anxiety, trauma, depression, grief, and the transitions that rearrange a life. Relational, trauma-informed, and adapted to you rather than to a protocol.</p>
+        <a href="services.html#therapy" style="display:inline-flex;align-items:center;padding:14px 24px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-600)">Learn about therapy</a>
+      </div>
+      <div style="flex:1 1 420px;align-self:stretch;min-height:420px;position:relative;border-left:2px solid var(--color-divider)">
+        <image-slot id="evoke-therapy" src="assets/evoke-therapy.webp" shape="rect" placeholder="Drop a photo — the therapy room, two chairs, soft light"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:center">
+      <div style="flex:1 1 420px;align-self:stretch;min-height:420px;position:relative;border-right:2px solid var(--color-divider)">
+        <image-slot id="evoke-supervision" src="assets/evoke-supervision.webp" shape="rect" placeholder="Drop a photo — a desk, notes, a window"></image-slot>
+      </div>
+      <div style="flex:1 1 420px;padding:clamp(52px,7vw,80px) 0">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Clinical supervision</p>
+        <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 20px;max-width:18ch;text-wrap:pretty">Support for the clinician you are becoming.</h2>
+        <p style="font-size:17px;max-width:52ch;margin:0 0 28px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Board-approved supervision for Limited Licensed Counselors accruing hours toward full licensure in Michigan. Developmental rather than evaluative: we look at your cases, and at how you are holding them.</p>
+        <a href="services.html#supervision" style="display:inline-flex;align-items:center;padding:14px 24px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-100)">Learn about supervision</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px">
+      <div style="flex:0 1 300px">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Who I work with</p>
+        <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 75%,transparent)">Young adults to elders across Michigan. If what brought you here is not on this list, it still belongs in the room.</p>
+      </div>
+      <div style="flex:1 1 480px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 40px;border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+        <div style="padding:16px 0;font-size:16px">Anxiety</div>
+        <div style="padding:16px 0;font-size:16px">Trauma</div>
+        <div style="padding:16px 0;font-size:16px">Depression</div>
+        <div style="padding:16px 0;font-size:16px">Grief</div>
+        <div style="padding:16px 0;font-size:16px">Life transitions</div>
+        <div style="padding:16px 0;font-size:16px">Young adults to elders</div>
+        <div style="padding:16px 0;font-size:16px">Couples</div>
+        <div style="padding:16px 0;font-size:16px">LGBTQ+ affirming</div>
+        <div style="padding:16px 0;font-size:16px">Healthcare professionals</div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showHowItWorks }}" hint-placeholder-val="{{ true }}">
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-accent-100)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,32px)">
+      <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">How it works</p>
+      <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 48px;max-width:20ch;text-wrap:pretty">Three steps to a first session.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 40px;border-top:2px solid var(--color-divider)">
+        <div style="padding:32px 0 8px">
+          <p style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Step one</p>
+          <h3 style="font-size:20px;margin:0 0 10px">A free fifteen-minute call</h3>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">We talk about what you are looking for, I answer your questions, and we decide together whether this is a fit.</p>
+        </div>
+        <div style="padding:32px 0 8px">
+          <p style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Step two</p>
+          <h3 style="font-size:20px;margin:0 0 10px">Scheduling and paperwork</h3>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">We set your first appointment on the call. Intake forms arrive by secure link and take about ten minutes.</p>
+        </div>
+        <div style="padding:32px 0 8px">
+          <p style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Step three</p>
+          <h3 style="font-size:20px;margin:0 0 10px">Begin</h3>
+          <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">We start where you want to start, and build a plan together as we go. Nothing is fixed in advance.</p>
+        </div>
+      </div>
+      <p style="margin:40px 0 0;max-width:70ch;font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Several major Michigan plans are accepted, and a limited number of sliding-scale spots are held open. Bring your carrier to the consult call and we will confirm coverage before we schedule. <a href="services.html#insurance">Rates and insurance</a></p>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:64px;align-items:start">
+      <div style="flex:0 1 340px;width:100%;aspect-ratio:4/5;position:relative;{{ portraitTone }}">
+        <image-slot id="evoke-portrait-home" src="assets/evoke-portrait-home.webp" shape="rect" placeholder="Drop a portrait"></image-slot>
+      </div>
+      <div style="flex:1 1 480px">
+        <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">About the practice</p>
+        <h2 style="font-size:clamp(27px,3.1vw,38px);margin:0 0 26px;max-width:20ch;text-wrap:pretty">A steady place to do difficult work.</h2>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:18px;line-height:1.4;letter-spacing:-0.01em;margin:0 0 20px">Welcome!</p>
+        <p style="font-size:18px;max-width:60ch;margin:0 0 20px">I began my career as a Physician Associate in Cardiac Surgery and Neurosurgery, which gave me deep insight into the unique pressures medical professionals face.</p>
+        <p style="font-size:16px;max-width:60ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">That background shapes how I work today as a therapist, understanding the intensity, the moral weight, and the toll that modern life and careers can take on individuals and relationships.</p>
+        <a href="about.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-100)">Read more about me</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--color-accent);color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,88px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+      <div style="flex:0 1 300px">
+        <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 14px;max-width:22ch;color:#fff;text-wrap:pretty">The first step is a fifteen-minute conversation.</h2>
+        <p style="margin:0;font-size:17px;max-width:52ch;color:rgba(255,255,255,0.92)">No cost, no obligation. We talk about what you are looking for and whether working together makes sense.</p>
+      </div>
+      <a href="contact.html" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" style-hover="background:var(--color-accent-100)">Book a consult</a>
+    </div>
+  </section>
+
+  <footer style="border-top:2px solid var(--color-divider);background:var(--color-bg)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;align-items:start">
+      <div>
+        <img src="assets/evoke-logo.png" alt="evoke psychotherapy" style="height:clamp(80px,14vw,120px);width:auto;margin-bottom:14px">
+        <p style="margin:0;font-size:13px;color:color-mix(in srgb,var(--color-text) 62%,transparent)">evoke psychotherapy, pllc</p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Office</h4>
+        <p style="margin:0;font-size:15px;line-height:1.7">161 East Michigan Avenue<br>Suite 400N<br>Kalamazoo, MI 49007</p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Contact</h4>
+        <p style="margin:0;font-size:15px;line-height:1.9"><a href="tel:2699297486" style="text-decoration:none">269-929-7486</a><br><a href="mailto:lori@evokepsychotherapy.com" style="text-decoration:none">lori@evokepsychotherapy.com</a></p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Pages</h4>
+        <p style="margin:0;font-size:15px;line-height:1.9"><a href="about.html" style="text-decoration:none">About</a><br><a href="services.html" style="text-decoration:none">Services</a><br><a href="contact.html" style="text-decoration:none">Contact &amp; FAQ</a></p>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:20px clamp(20px,4vw,32px);font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">If you are in crisis, call or text 988 for the Suicide &amp; Crisis Lifeline, or go to your nearest emergency room.</div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Text over photo&quot;,&quot;Photo beside text&quot;],&quot;default&quot;:&quot;Text over photo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroScrim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:60,&quot;step&quot;:2,&quot;unit&quot;:&quot;%&quot;,&quot;default&quot;:22,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;portraitBrightness&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:90,&quot;max&quot;:150,&quot;step&quot;:2,&quot;unit&quot;:&quot;%&quot;,&quot;default&quot;:114,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Portrait&quot;},&quot;portraitContrast&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:85,&quot;max&quot;:130,&quot;step&quot;:2,&quot;unit&quot;:&quot;%&quot;,&quot;default&quot;:100,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Portrait&quot;},&quot;portraitSaturation&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:80,&quot;max&quot;:140,&quot;step&quot;:2,&quot;unit&quot;:&quot;%&quot;,&quot;default&quot;:105,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Portrait&quot;},&quot;showHowItWorks&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const layout = this.props.heroLayout ?? "Text over photo";
+    const scrim = this.props.heroScrim ?? 22;
+    return {
+      heroOverlay: layout === "Text over photo",
+      heroSplit: layout !== "Text over photo",
+      showHowItWorks: this.props.showHowItWorks ?? true,
+      portraitTone: "filter:brightness(" + ((this.props.portraitBrightness ?? 114) / 100) +
+        ") contrast(" + ((this.props.portraitContrast ?? 100) / 100) +
+        ") saturate(" + ((this.props.portraitSaturation ?? 105) / 100) + ")",
+      scrimStyle: {
+        position: "absolute",
+        inset: 0,
+        pointerEvents: "none",
+        background: "rgba(44,47,58," + (scrim / 100) + ")"
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
