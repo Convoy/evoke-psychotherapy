@@ -482,7 +482,7 @@ class Component extends DCLogic {
           alignItems: "flex-start",
           borderTop: "2px solid var(--color-divider)",
           paddingTop: "40px",
-          flexDirection: (this.state.vw < 900 || i % 2 === 0) ? "row" : "row-reverse"
+          flexDirection: "row"
         },
         slotId: s.slotId,
         photo: s.photo || undefined,
@@ -522,7 +522,7 @@ class Component extends DCLogic {
           flexWrap: "wrap",
           gap: "56px",
           alignItems: "flex-start",
-          flexDirection: (this.state.vw < 900 || i % 2 === 0) ? "row" : "row-reverse"
+          flexDirection: "row"
         },
         sectionStyle: {
           borderBottom: "2px solid var(--color-divider)",
