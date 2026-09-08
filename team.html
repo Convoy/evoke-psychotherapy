@@ -107,7 +107,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   </section>
 
   <sc-for list="{{ members }}" as="m" hint-placeholder-count="3">
-    <section style="{{ m.sectionStyle }}">
+    <section id="{{ m.anchorId }}" style="{{ m.sectionStyle }}">
       <div data-reveal="1" style="{{ m.rowStyle }}">
         <div style="flex:0 1 320px;min-width:260px">
           <sc-if value="{{ m.hasPhoto }}" hint-placeholder-val="{{ true }}">
@@ -426,6 +426,35 @@ class Component extends DCLogic {
     window.addEventListener("scroll", this._onScroll, { passive: true });
     this._onScroll();
     this._setupReveals();
+    this._jumpToHash();
+  }
+
+  _jumpToHash() {
+    const go = () => {
+      const id = decodeURIComponent((location.hash || "").slice(1));
+      if (!id) return null;
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const off = el.getBoundingClientRect().top - 76;
+      if (Math.abs(off) > 2) window.scrollTo(0, (window.pageYOffset || 0) + off);
+      return Math.abs(off);
+    };
+    const settle = () => {
+      let elapsed = 0, stable = 0;
+      const tick = () => {
+        const off = go();
+        if (off !== null && off < 4) stable++; else stable = 0;
+        elapsed += 80;
+        if (stable >= 3 || elapsed > 2500) return;
+        setTimeout(tick, 80);
+      };
+      tick();
+    };
+    if (location.hash) {
+      settle();
+      window.addEventListener("load", settle);
+    }
+    window.addEventListener("hashchange", settle);
   }
 
   componentWillUnmount() {
@@ -528,6 +557,7 @@ class Component extends DCLogic {
       })),
       members: TEAM.map((m, i) => ({
         slotId: m.slotId,
+        anchorId: m.name.split(/[\s,]/)[0].toLowerCase(),
         photo: m.photo || undefined,
         hasPhoto: !!m.photo,
         noPhoto: !m.photo,
@@ -551,6 +581,7 @@ class Component extends DCLogic {
           flexDirection: "row"
         },
         sectionStyle: {
+          scrollMarginTop: "84px",
           borderBottom: "2px solid var(--color-divider)",
           background: i % 2 === 1 ? "var(--color-surface)" : "var(--color-bg)"
         },
