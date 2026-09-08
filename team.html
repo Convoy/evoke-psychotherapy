@@ -134,7 +134,12 @@ h1,h2,h3,h4{letter-spacing:-0.02em}
           </div>
           <div style="flex:1 1 460px;min-width:280px">
             <sc-for list="{{ s.paragraphs }}" as="para" hint-placeholder-count="2">
-              <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
+              <sc-if value="{{ para.plain }}" hint-placeholder-val="{{ true }}">
+                <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
+              </sc-if>
+              <sc-if value="{{ para.italic }}" hint-placeholder-val="{{ false }}">
+                <p style="font-size:17px;font-style:italic;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
+              </sc-if>
             </sc-for>
             <div style="border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px">
               <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ s.contactNote }}</p>
@@ -243,41 +248,34 @@ const TEAM = [
       "I work best with intellectually curious people who are ready to do depth work and explore what matters most. My approach is warm, direct, and supportive. It draws on attachment theory and psychodynamic and Jungian thought. I utilize tools such as Circle of Security, AEDP (Accelerated Experiential Dynamic Psychotherapy), Brainspotting, and Motivational Interviewing.",
       "Having trained at the Ainsworth Attachment Clinic, my lens is decidedly relational and attachment focused. I believe that all of our patterns, adaptive and maladaptive alike, come from the original intersubjective field. It is by turning our head, so to speak, toward that fact that we can understand and unravel the patterns that no longer work for us."
     ],
-    focus: ["Anxiety and burnout", "Trauma", "Life transitions", "Healthcare professionals", "Couples"],
+    focus: [
+      "Healthcare professionals",
+      "Doctors, advanced practice providers, and nurses",
+      "Medical marriages",
+      "Parenting",
+      "Women juggling it all",
+      "Perimenopause and midlife concerns",
+      "Anxiety and burnout",
+      "Trauma",
+      "Life transitions",
+      "Couples"
+    ],
     sessions: "53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide.",
     ctaLabel: "Request Lori"
-  },
-  {
-    slotId: "team-victoria",
-    photo: "assets/victoria.png",
-    photoHint: "Portrait of Victoria Orbe",
-    name: "Victoria Orbe, LMSW, CCS, CAADC",
-    role: "Therapist",
-    status: "Accepting new clients",
-    open: false,
-    paragraphs: [
-      "Victoria Orbe, LMSW, CCS, CAADC, is a licensed master social worker and certified addiction counselor with nearly a decade of experience in adolescent and family mental health. She currently serves as the Elizabeth Upjohn Clinical Director at Community Healing Centers in Kalamazoo, where she has also led children's services and worked directly as a youth outpatient therapist.",
-      "Victoria specializes in substance use and addiction treatment, trauma, anxiety, depression, and family dynamics, drawing on cognitive-behavioral, dialectical, and motivational interviewing approaches tailored to each client.",
-      "She holds a Master's degree in Interpersonal Practice from the University of Michigan School of Social Work and is a Certified Clinical Supervisor, regularly training other clinicians on engaging young people who are resistant to treatment.",
-      "Victoria brings a warm, non-judgmental approach grounded in meeting clients \u2014 especially adolescents and families \u2014 where they are. She is bilingual and sees clients in English or Spanish."
-    ],
-    focus: ["Substance use and addiction", "Adolescents and families", "Trauma, anxiety, depression", "Clinical supervision", "Sessions in Spanish"],
-    sessions: "53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide.",
-    ctaLabel: "Request Victoria"
   },
   {
     slotId: "team-james",
     photo: "",
     photoHint: "Photograph coming soon",
-    name: "James Triumph",
+    name: "James Triumph, CAADC",
     role: "Limited Licensed Counselor",
     status: "Accepting new clients",
     open: false,
     paragraphs: [
-      "James is a limited licensed counselor working toward full licensure, with board-approved supervision provided in house.",
+      "James is a limited licensed counselor and a certified advanced alcohol and drug counselor (CAADC), working toward full licensure with board-approved supervision provided in house.",
       "His full bio and approach will be added here shortly. Newer clinicians carry a lighter caseload here by design, with weekly supervision built into the schedule rather than squeezed around it."
     ],
-    focus: ["To be announced"],
+    focus: ["Substance use and addiction", "Co-occurring concerns"],
     sessions: "53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide.",
     ctaLabel: "Request James"
   }
@@ -316,9 +314,10 @@ const STAFF = [
     role: "Therapy dog in training",
     status: "Currently in training",
     paragraphs: [
-      "Juniper holds a bachelor's degree in Comparative Literature from Yale, where she wrote a well-received senior thesis on the pastoral tradition and spent four years perfecting the art of falling asleep in the reading room without being asked to leave.",
-      "Before turning to clinical work she spent three years in management consulting, advising firms on organizational culture. She left the field the day she realized every recommendation she had ever made could be summarized as \"go outside more\" and \"sit with people when they are sad.\"",
-      "A stint with the Peace Corps in rural Ecuador followed, where she worked on community water projects and became fluent in enthusiastic greeting. She returned to Michigan convinced that presence does most of the work, which is more or less the practice's whole philosophy.",
+      "The following was translated from Juniper's barking with AI, and should not be taken literally.",
+      { italic: true, text: "Juniper holds a bachelor's degree in Comparative Literature from Yale, where she wrote a well-received senior thesis on the pastoral tradition and spent four years perfecting the art of falling asleep in the reading room without being asked to leave." },
+      { italic: true, text: "Before turning to clinical work she spent three years in management consulting, advising firms on organizational culture. She left the field the day she realized every recommendation she had ever made could be summarized as \"go outside more\" and \"sit with people when they are sad.\"" },
+      { italic: true, text: "A stint with the Peace Corps in rural Ecuador followed, where she worked on community water projects and became fluent in enthusiastic greeting. She returned to Michigan convinced that presence does most of the work, which is more or less the practice's whole philosophy." },
       "Juniper is now completing her therapy dog certification. She sits in on sessions by invitation only, and clients are always asked first."
     ],
     contactNote: "Ask about Juniper when you schedule."
@@ -339,7 +338,11 @@ class Component extends DCLogic {
         status: s.status,
         hasStatus: !!s.status,
         contactNote: s.contactNote,
-        paragraphs: s.paragraphs.map(text => ({ text }))
+        paragraphs: s.paragraphs.map(p => {
+          const text = typeof p === "string" ? p : p.text;
+          const italic = typeof p === "object" && !!p.italic;
+          return { text, italic, plain: !italic };
+        })
       })),
       members: TEAM.map((m, i) => ({
         slotId: m.slotId,
