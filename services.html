@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
+<title>Services | evoke psychotherapy pllc</title>
+<meta name="description" content="Individual therapy, couples therapy, and clinical supervision for therapists accruing hours, in Kalamazoo and by telehealth across Michigan.">
+<link rel="canonical" href="https://www.evokepsychotherapy.com/services">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="evoke psychotherapy pllc">
+<meta property="og:title" content="Services | evoke psychotherapy pllc">
+<meta property="og:description" content="Individual therapy, couples therapy, and clinical supervision for therapists accruing hours, in Kalamazoo and by telehealth across Michigan.">
+<meta property="og:url" content="https://www.evokepsychotherapy.com/services">
+<meta property="og:image" content="https://www.evokepsychotherapy.com/assets/og-evoke.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The waiting area at evoke psychotherapy in downtown Kalamazoo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services | evoke psychotherapy pllc">
+<meta name="twitter:description" content="Individual therapy, couples therapy, and clinical supervision for therapists accruing hours, in Kalamazoo and by telehealth across Michigan.">
+<meta name="twitter:image" content="https://www.evokepsychotherapy.com/assets/og-evoke.jpg">
+<meta name="theme-color" content="#f7f5f0">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -16,6 +33,24 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
+<title>Services | evoke psychotherapy pllc</title>
+<meta name="description" content="Individual therapy, couples therapy, and clinical supervision for therapists accruing hours, in Kalamazoo and by telehealth across Michigan.">
+<link rel="canonical" href="https://www.evokepsychotherapy.com/services">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="evoke psychotherapy pllc">
+<meta property="og:title" content="Services | evoke psychotherapy pllc">
+<meta property="og:description" content="Individual therapy, couples therapy, and clinical supervision for therapists accruing hours, in Kalamazoo and by telehealth across Michigan.">
+<meta property="og:url" content="https://www.evokepsychotherapy.com/services">
+<meta property="og:image" content="https://www.evokepsychotherapy.com/assets/og-evoke.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The waiting area at evoke psychotherapy in downtown Kalamazoo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services | evoke psychotherapy pllc">
+<meta name="twitter:description" content="Individual therapy, couples therapy, and clinical supervision for therapists accruing hours, in Kalamazoo and by telehealth across Michigan.">
+<meta name="twitter:image" content="https://www.evokepsychotherapy.com/assets/og-evoke.jpg">
+<meta name="theme-color" content="#f7f5f0">
 <link rel="stylesheet" href="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/styles.css">
 <script src="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/_ds_bundle.js"></script>
 <script src="./image-slot.js"></script>
@@ -94,7 +129,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
     <div style="position:relative;min-height:min(74svh,720px);display:flex;align-items:flex-end;overflow:hidden">
       <div data-parallax="0.07" style="position:absolute;inset:-6% 0;will-change:transform">
         <div data-hero-drift="true" style="{{ heroDriftStyle }}">
-          <image-slot id="evoke-services-hero-opt" src="assets/evoke-services-facade.webp" shape="rect" placeholder="Drop the services photograph"></image-slot>
+          <image-slot id="evoke-services-hero-opt" src="assets/evoke-services-facade-v3.webp" shape="rect" placeholder="Drop the services photograph"></image-slot>
         </div>
       </div>
       <div style="{{ scrimStyle }}"></div>
@@ -253,7 +288,8 @@ class Component extends DCLogic {
       raf = requestAnimationFrame(() => {
         raf = 0;
         const y = window.scrollY || 0;
-        if ((y > 40) !== this.state.scrolled) this.setState({ scrolled: y > 40 });
+        const next = this.state.scrolled ? y > 24 : y > 96;
+        if (next !== this.state.scrolled) this.setState({ scrolled: next });
         if ((this.props.parallax ?? true) && !this._reduced()) {
           const h = window.innerHeight;
           document.querySelectorAll("[data-parallax]").forEach(el => {
