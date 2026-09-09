@@ -92,7 +92,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
     <div style="position:relative;min-height:min(90svh,880px);display:flex;align-items:flex-end;overflow:hidden">
       <div data-parallax="0.07" style="position:absolute;inset:-6% 0;will-change:transform">
         <div data-hero-drift="true" style="{{ heroDriftStyle }}">
-          <image-slot id="evoke-hero-sofa-opt" src="assets/evoke-hero-sofa.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
+          <image-slot id="evoke-hero-sofa-opt" src="assets/evoke-hero-sofa-v2.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
         </div>
       </div>
       <div style="{{ scrimStyle }}"></div>
@@ -123,7 +123,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       </div>
       <div style="align-self:stretch;min-height:min(80svh,720px);position:relative;overflow:hidden;border-left:2px solid var(--color-divider)">
         <div data-parallax="0.08" style="position:absolute;inset:-8% 0;will-change:transform">
-          <image-slot id="evoke-hero-sofa-opt" src="assets/evoke-hero-sofa.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
+          <image-slot id="evoke-hero-sofa-opt" src="assets/evoke-hero-sofa-v2.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
         </div>
       </div>
     </div>
@@ -254,9 +254,11 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           </div>
         </div>
         <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-6px)">
-          <a href="team.html#james" style="width:100%;aspect-ratio:4/5;position:relative;border:2px dashed var(--color-divider);display:flex;align-items:center;justify-content:center;padding:24px;text-decoration:none">
-            <p style="margin:0;font-size:14px;text-align:center;color:color-mix(in srgb,var(--color-text) 62%,transparent)">Photograph<br>coming soon</p>
-          </a>
+          <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden">
+            <a href="team.html#james" style="display:block;position:absolute;inset:0" aria-label="Read James's bio">
+              <image-slot id="home-james-opt" src="assets/james-garden.webp" shape="rect" placeholder="Portrait of James Triumph"></image-slot>
+            </a>
+          </div>
           <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
             <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#james" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-700)">James Triumph, CAADC</a></h3>
             <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Therapist</p>

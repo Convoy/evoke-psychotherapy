@@ -94,7 +94,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
     <div style="position:relative;min-height:min(74svh,720px);display:flex;align-items:flex-end;overflow:hidden">
       <div data-parallax="0.07" style="position:absolute;inset:-6% 0;will-change:transform">
         <div data-hero-drift="true" style="{{ heroDriftStyle }}">
-          <image-slot id="evoke-team-hero-opt" src="assets/evoke-team-lobby-sm.webp" shape="rect" placeholder="Drop the team photograph"></image-slot>
+          <image-slot id="evoke-team-hero-opt" src="assets/evoke-team-lobby-v2.webp" shape="rect" placeholder="Drop the team photograph"></image-slot>
         </div>
       </div>
       <div style="{{ scrimStyle }}"></div>
@@ -127,10 +127,15 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           </div>
         </div>
         <div style="flex:1 1 460px;min-width:280px">
+          <sc-if value="{{ m.hasTagline }}" hint-placeholder-val="{{ true }}">
+            <div style="float:right;width:min(32%,210px);background:var(--ink-deep);padding:22px 20px;margin:4px 0 22px 30px">
+              <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(19px,1.7vw,23px);line-height:1.2;letter-spacing:-0.02em;margin:0;color:#fff;text-wrap:pretty">{{ m.tagline }}</p>
+            </div>
+          </sc-if>
           <sc-for list="{{ m.paragraphs }}" as="para" hint-placeholder-count="3">
             <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
           </sc-for>
-          <div style="border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px">
+          <div style="clear:both;border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px">
             <div>
               <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Focus areas</h4>
               <ul style="margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:15px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">
@@ -284,14 +289,15 @@ const TEAM = [
     photo: "assets/lori-garden-opt.webp",
     photoHint: "Portrait of Lori Guidone",
     name: "Lori Guidone, PA, MA, LPC",
+    tagline: "From the operating room to the therapy room.",
     role: "Founder & Clinical Director",
     status: "Accepting new clients",
     open: false,
     paragraphs: [
-      "I began my career as a Physician Associate in Cardiac Surgery and Neurosurgery, which gave me deep insight into the unique pressures medical professionals face.",
-      "That background shapes how I work today as a therapist, understanding the intensity, the moral weight, and the toll that modern life and careers can take on individuals and relationships.",
-      "I work best with intellectually curious people who are ready to do depth work and explore what matters most. My approach is warm, direct, and supportive. It draws on attachment theory and psychodynamic and Jungian thought. I utilize tools such as Circle of Security, AEDP (Accelerated Experiential Dynamic Psychotherapy), Brainspotting, and Motivational Interviewing.",
-      "Having trained at the Ainsworth Attachment Clinic, my lens is decidedly relational and attachment focused. I believe that all of our patterns, adaptive and maladaptive alike, come from the original intersubjective field. It is by turning our head, so to speak, toward that fact that we can understand and unravel the patterns that no longer work for us."
+      "Lori began her career as a Physician Associate \u2014 trained at Weill Cornell Medicine \u2014 operating alongside cardiac and neurosurgeons, an experience that placed her at the center of some of medicine's most consequential moments and gave her a deep, firsthand understanding of the pressures medical professionals face. That background continues to shape how she practices as a therapist today \u2014 she brings a clear-eyed appreciation for intensity, moral weight, and the toll that demanding careers and modern life can take on individuals and relationships.",
+      "Lori works best with intellectually curious clients who are ready to do depth work and explore what matters most to them. Her approach is warm, direct, and supportive, drawing on attachment theory, psychodynamic thought, and Jungian psychology. She integrates tools including Circle of Security, AEDP (Accelerated Experiential Dynamic Psychotherapy), Brainspotting, and Motivational Interviewing.",
+      "Having trained at the Ainsworth Attachment Clinic, Lori's lens is decidedly relational and attachment-focused. She believes that all of our patterns \u2014 adaptive and maladaptive alike \u2014 originate in our earliest intersubjective experiences. By turning toward that fact, she helps clients understand and unravel the patterns that no longer serve them.",
+      "Outside the therapy room, Lori is a devoted gardener, dancer, animal lover, and champion of historic preservation, and serves as cofounder and CEO of a local real estate investment company. Where she once held beating hearts and touched the brain itself, she now holds hearts and minds in a different, equally vital way."
     ],
     focus: [
       "Healthcare professionals",
@@ -313,13 +319,17 @@ const TEAM = [
     photo: "assets/victoria-garden.webp",
     photoHint: "Portrait of Victoria Orbe",
     name: "Victoria Orbe, LMSW, CCS, CAADC",
+    tagline: "Ten years of meeting people where they are.",
     role: "Therapist",
     status: "Accepting new clients",
     open: false,
     paragraphs: [
-      "Victoria joins evoke psychotherapy as a therapist with nearly a decade of experience in adolescent and family mental health. She recently served as the Elizabeth Upjohn Clinical Director at Community Healing Centers in Kalamazoo, where she also led children's services and worked directly as a youth outpatient therapist.",
+      "Victoria joins evoke psychotherapy as a therapist with a decade of experience in mental health, most recently as Clinical Director at Community Healing Centers \u2013 Elizabeth Upjohn, where she spent six years and rose from outpatient therapist to director of clinical operations.",
+      "She began her career as an Intensive Home-Based Therapist with Starr Commonwealth in Calhoun County, working with high-risk youth and families, then joined InterAct's Assertive Community Treatment team, providing intensive community-based support to individuals with severe and persistent mental illness and co-occurring addiction.",
+      "At CHC, she led initiatives to improve therapist retention, build community partnerships, strengthen quality assurance, and expand school-based therapy contracts, while significantly improving audit outcomes.",
       "Victoria specializes in substance use and addiction treatment, trauma, anxiety, depression, and family dynamics, drawing on cognitive-behavioral, dialectical, and motivational interviewing approaches tailored to each client.",
-      "She holds a Master's degree in Interpersonal Practice from the University of Michigan School of Social Work and is a Certified Clinical Supervisor, with experience training other clinicians on engaging young people who are resistant to treatment. Victoria is bilingual and sees clients in English or Spanish. She brings a warm, non-judgmental approach grounded in meeting clients \u2014 especially adolescents and families \u2014 where they are."
+      "She holds a Master's degree in Interpersonal Practice from the University of Michigan School of Social Work and is a Certified Clinical Supervisor with a hands-on approach to training and mentorship. She believes good care is built on collaboration \u2014 systems that support clients and clinicians alike.",
+      "Outside the office, Victoria coaches soccer, dances, and keeps busy with her pets and puzzles."
     ],
     focus: [
       "Bilingual (Spanish)",
@@ -336,17 +346,19 @@ const TEAM = [
   },
   {
     slotId: "team-james-opt",
-    photo: "",
-    photoHint: "Photograph coming soon",
+    photo: "assets/james-garden.webp",
+    photoHint: "Portrait of James Triumph",
     name: "James Triumph, CAADC",
+    tagline: "Many of life's battles are won or lost in the mind.",
     role: "Therapist",
     status: "Accepting new clients",
     open: false,
     paragraphs: [
-      "James is a limited licensed counselor and a certified advanced alcohol and drug counselor (CAADC), working toward full licensure with board-approved supervision provided in house.",
-      "His full bio and approach will be added here shortly. Newer clinicians carry a lighter caseload here by design, with weekly supervision built into the schedule rather than squeezed around it."
+      "James has worked in the mental health field since 2010, bringing more than sixteen years of frontline experience to his clinical practice. He began his career as a direct care worker at Kalamazoo Psychiatric Hospital, where he developed extensive skills in crisis management \u2014 de-escalating dysregulated patients, defusing tense situations, and restoring stability in high-acuity environments.",
+      "When James transitioned into clinical counseling, he brought this depth of experience with him, along with training in Nonviolent Crisis Intervention (CPI) that positions him to support not only individuals facing mental health challenges, but also the family members and loved ones who share their lives.",
+      "James works with clients seeking to reclaim their lives from anger, anxiety, depression, and addiction. His approach is rooted in cognitive-behavioral therapy: he believes that much of our struggle stems from how we perceive and interpret our circumstances, and that many of life's battles are won or lost in the mind. Drawing on CBT, DBT, and REBT, he helps clients recognize the power of their thinking and reclaim agency over their lives."
     ],
-    focus: ["Substance use and addiction", "Co-occurring concerns"],
+    focus: ["Anger", "Anxiety", "Depression", "Substance use and addiction", "Crisis and de-escalation", "Family support"],
     sessions: "53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide.",
     ctaLabel: "Request James"
   }
@@ -563,6 +575,8 @@ class Component extends DCLogic {
         noPhoto: !m.photo,
         photoHint: m.photoHint,
         name: m.name,
+        tagline: m.tagline,
+        hasTagline: !!m.tagline,
         role: m.role,
         status: m.status,
         sessions: m.sessions,
