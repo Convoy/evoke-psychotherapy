@@ -225,10 +225,55 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Getting here</p>
       <h2 style="font-size:clamp(25px,2.8vw,33px);margin:0 0 14px;max-width:24ch;text-wrap:pretty">Parking and directions</h2>
       <p style="font-size:16px;max-width:60ch;margin:0 0 40px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">The office is located in the Haymarket Building at 161 East Michigan Avenue, Suite 400N, on the north side of the street, on the fourth floor above the WL Social House restaurant. Two parking options are marked on the map below.</p>
-      <img src="assets/parking-map.webp" alt="Map of downtown Kalamazoo showing parking areas and walking routes to 161 East Michigan Avenue" style="display:block;width:100%;max-width:1116px;height:auto;border:2px solid var(--color-divider)">
+      <div style="position:relative;max-width:1116px;line-height:0;border:2px solid var(--color-divider)">
+        <img src="assets/map-downtown.png" alt="Aerial map of downtown Kalamazoo showing the Haymarket Building, the 180 East Water Street parking structure, and the lot at 305 East Michigan Avenue" style="display:block;width:100%;height:auto">
+        <sc-if value="{{ mapHotspots }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="0 0 1619 971" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+            <polygon points="812,456 806,462 836,482 833,483 802,581 800,674 811,690 840,692 857,692 896,582 904,534 904,472 896,461 876,456" fill="{{ mapFillPurple }}" style="cursor:pointer;transition:fill 140ms ease" onMouseEnter="{{ mapEnterPurple }}" onMouseLeave="{{ mapLeave }}" onClick="{{ mapPinPurple }}"></polygon>
+            <polygon points="1152,282 1144,283 1144,288 937,310 935,335 870,345 868,379 897,445 913,473 929,524 949,524 999,518 1276,516 1037,513 1262,482 1271,401 1249,399 1199,319 1186,314 1165,282" fill="{{ mapFillBlue }}" style="cursor:pointer;transition:fill 140ms ease" onMouseEnter="{{ mapEnterBlue }}" onMouseLeave="{{ mapLeave }}" onClick="{{ mapPinBlue }}"></polygon>
+            <polygon points="1387,615 1336,513 1459,495 1421,424 1437,413 1373,316 1441,304 1600,574" fill="{{ mapFillGreen }}" style="cursor:pointer;transition:fill 140ms ease" onMouseEnter="{{ mapEnterGreen }}" onMouseLeave="{{ mapLeave }}" onClick="{{ mapPinGreen }}"></polygon>
+          </svg>
+        </sc-if>
+      <sc-if value="{{ mapShowPurple }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:2%;top:5%;width:min(400px,37%);max-height:90%;overflow-y:auto;box-sizing:border-box;background:#fff;border:2px solid var(--ink-deep);padding:18px 20px 20px;line-height:1.6;z-index:3;box-shadow:0 18px 40px rgba(27,29,34,0.22)" onMouseEnter="{{ mapEnterPurple }}" onMouseLeave="{{ mapLeave }}">
+          <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin:0 0 8px">Your destination</p>
+          <p style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:-0.02em;margin:0 0 4px">evoke psychotherapy pllc</p>
+          <p style="font-size:14px;margin:0 0 14px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Haymarket Building, Suite 400N</p>
+
+          <p style="font-size:14px;margin:0">Enter from Michigan Avenue or from Whiskey Alley at the back of the building. Take the elevator to the fourth floor and follow the signs to Suite 400N.</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mapShowBlue }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:2%;top:5%;width:min(400px,37%);max-height:90%;overflow-y:auto;box-sizing:border-box;background:#fff;border:2px solid var(--ink-deep);padding:18px 20px 20px;line-height:1.6;z-index:3;box-shadow:0 18px 40px rgba(27,29,34,0.22)" onMouseEnter="{{ mapEnterBlue }}" onMouseLeave="{{ mapLeave }}">
+          <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin:0 0 8px">Option two &middot; parking structure</p>
+          <p style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:-0.02em;margin:0 0 4px">180 East Water Street</p>
+          <p style="font-size:14px;margin:0 0 14px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Entrance on North Edwards Street</p>
+          <img src="assets/parking-garage-entrance.webp" alt="The 180 East Water Street parking structure entrance" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin:0 0 14px">
+          <p style="font-size:14px;margin:0">Covered parking one block from the office. Bring your ticket to your session and we will validate it. From the structure, walk through Whiskey Alley, which stays heated in winter.</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mapShowGreen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:44%;top:5%;width:min(400px,37%);max-height:90%;overflow-y:auto;box-sizing:border-box;background:#fff;border:2px solid var(--ink-deep);padding:18px 20px 20px;line-height:1.6;z-index:3;box-shadow:0 18px 40px rgba(27,29,34,0.22)" onMouseEnter="{{ mapEnterGreen }}" onMouseLeave="{{ mapLeave }}">
+          <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin:0 0 8px">Option one &middot; surface lot</p>
+          <p style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:-0.02em;margin:0 0 4px">305 East Michigan Avenue</p>
+          <p style="font-size:14px;margin:0 0 14px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Free during weekday office hours</p>
+          <img src="assets/parking-lot-sign.webp" alt="The Haymarket Plaza parking sign at 305 East Michigan Avenue" style="display:block;width:46%;aspect-ratio:9/14;object-fit:cover;margin:0 0 14px">
+          <p style="font-size:14px;margin:0">Free Monday through Friday, seven in the morning to five in the evening; paid outside those hours, by QR code at the sign. Walk west on Whiskey Alley or Michigan Avenue for about two blocks.</p>
+        </div>
+      </sc-if>
+      </div>
+      <p style="font-size:14px;line-height:1.7;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 72%,transparent)">Hover over a highlighted area for photos and details, or click to keep its card open.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 40px;margin-top:40px;border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
         <div style="display:flex;gap:14px;padding:24px 0">
-          <span style="flex:0 0 auto;width:22px;height:22px;background:#7ed957;border:1px solid rgba(0,0,0,0.25);margin-top:2px"></span>
+          <span style="flex:0 0 auto;width:22px;height:22px;background:#6c00ca;border:1px solid rgba(0,0,0,0.25);margin-top:2px"></span>
+          <div>
+            <h4 style="font-size:16px;margin:0 0 6px">Your destination</h4>
+            <p style="font-size:15px;margin:0 0 6px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Haymarket Building, fourth floor.</p>
+            <p style="font-size:15px;margin:0;font-weight:600">161 E Michigan Ave, Suite 400N</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;padding:24px 0">
+          <span style="flex:0 0 auto;width:22px;height:22px;background:#04e400;border:1px solid rgba(0,0,0,0.25);margin-top:2px"></span>
           <div>
             <h4 style="font-size:16px;margin:0 0 6px">Free parking</h4>
             <p style="font-size:15px;margin:0 0 6px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Free in marked spaces before 5pm.</p>
@@ -236,7 +281,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           </div>
         </div>
         <div style="display:flex;gap:14px;padding:24px 0">
-          <span style="flex:0 0 auto;width:22px;height:22px;background:#c026d3;border:1px solid rgba(0,0,0,0.25);margin-top:2px"></span>
+          <span style="flex:0 0 auto;width:22px;height:22px;background:#003efd;border:1px solid rgba(0,0,0,0.25);margin-top:2px"></span>
           <div>
             <h4 style="font-size:16px;margin:0 0 6px">Validated parking</h4>
             <p style="font-size:15px;margin:0 0 6px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Parking garage, validation offered.</p>
@@ -244,7 +289,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           </div>
         </div>
         <div style="display:flex;gap:14px;padding:24px 0">
-          <span style="flex:0 0 auto;width:22px;height:22px;margin-top:2px;display:flex;align-items:center"><span style="width:100%;border-top:3px dashed #e03131"></span></span>
+          <span style="flex:0 0 auto;width:22px;height:22px;margin-top:2px;background:var(--ink-deep);display:flex;align-items:center;justify-content:center"><span style="width:16px;border-top:3px dotted #f7f710"></span></span>
           <div>
             <h4 style="font-size:16px;margin:0 0 6px">Walking paths</h4>
             <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Routes from either parking area to the building entrance.</p>
@@ -384,7 +429,7 @@ const FAQS = [
 ];
 
 class Component extends DCLogic {
-  state = { open: 0, vw: typeof window !== "undefined" ? window.innerWidth : 1200, navOpen: false, scrolled: false };
+  state = { mapHover: null, mapPin: null, open: 0, vw: typeof window !== "undefined" ? window.innerWidth : 1200, navOpen: false, scrolled: false };
 
   componentDidMount() {
     this._onResize = () => {
@@ -457,8 +502,22 @@ class Component extends DCLogic {
     const scrim = this.props.heroScrim ?? 36;
     const isMobile = this.state.vw < 900;
     const compact = this.state.scrolled;
+    const mapOn = this.state.mapPin || this.state.mapHover;
+    const MAP_TINT = { purple: "rgba(123,47,214,0.34)", blue: "rgba(29,111,232,0.34)", green: "rgba(24,194,42,0.32)" };
+    const mapFill = k => (mapOn === k ? MAP_TINT[k] : "transparent");
+
     const bar = { display: "block", width: "22px", height: "2px", background: "var(--color-text)", transition: "transform .25s ease, opacity .2s ease" };
     return {
+      mapHotspots: !isMobile,
+      mapFillPurple: mapFill("purple"), mapFillBlue: mapFill("blue"), mapFillGreen: mapFill("green"),
+      mapShowPurple: mapOn === "purple", mapShowBlue: mapOn === "blue", mapShowGreen: mapOn === "green",
+      mapEnterPurple: () => this.setState({ mapHover: "purple" }),
+      mapEnterBlue: () => this.setState({ mapHover: "blue" }),
+      mapEnterGreen: () => this.setState({ mapHover: "green" }),
+      mapLeave: () => this.setState({ mapHover: null }),
+      mapPinPurple: e => { e.stopPropagation(); this.setState(s => ({ mapPin: s.mapPin === "purple" ? null : "purple" })); },
+      mapPinBlue: e => { e.stopPropagation(); this.setState(s => ({ mapPin: s.mapPin === "blue" ? null : "blue" })); },
+      mapPinGreen: e => { e.stopPropagation(); this.setState(s => ({ mapPin: s.mapPin === "green" ? null : "green" })); },
       desktopNav: !isMobile,
       mobileNav: isMobile,
       navOpen: isMobile && this.state.navOpen,
