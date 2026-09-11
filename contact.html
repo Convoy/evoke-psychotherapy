@@ -433,6 +433,7 @@ class Component extends DCLogic {
   state = { mapHover: null, mapPin: null, open: 0, vw: typeof window !== "undefined" ? window.innerWidth : 1200, navOpen: false, scrolled: false };
 
   componentDidMount() {
+    this._prefillTherapist();
     this._onResize = () => {
       const vw = window.innerWidth;
       this.setState(s => ({ vw, navOpen: vw >= 900 ? false : s.navOpen }));
@@ -461,6 +462,45 @@ class Component extends DCLogic {
     window.addEventListener("scroll", this._onScroll, { passive: true });
     this._onScroll();
     this._setupReveals();
+  }
+
+  _prefillTherapist() {
+    let name = "";
+    try { name = new URLSearchParams(window.location.search).get("therapist") || ""; } catch (e) {}
+    const sel = () => document.querySelector('select[name="therapist"]');
+    const setChoice = () => {
+      const s = sel();
+      if (!s || !name) return;
+      const opt = Array.from(s.options).find(o => o.text.trim().toLowerCase() === name.trim().toLowerCase());
+      if (opt) s.value = opt.value || opt.text;
+    };
+    const wanted = () => {
+      const target = document.getElementById("consult");
+      return target ? Math.max(0, target.getBoundingClientRect().top + window.scrollY - 84) : null;
+    };
+    const settle = () => {
+      const top = wanted();
+      if (top === null) return false;
+      if (Math.abs(window.scrollY - top) > 4) {
+        window.scrollTo({ top, behavior: this._reduced() ? "auto" : "smooth" });
+        return false;
+      }
+      return true;
+    };
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      setChoice();
+      if (window.location.hash !== "#consult") return;
+      settle();
+      let tries = 0, stop = false;
+      const abort = () => { stop = true; };
+      ["wheel", "touchstart", "keydown", "pointerdown"].forEach(e => window.addEventListener(e, abort, { once: true, passive: true }));
+      const tick = () => {
+        if (stop || ++tries > 24 || settle()) return;
+        setTimeout(tick, 250);
+      };
+      setTimeout(tick, 250);
+      window.addEventListener("load", () => setTimeout(() => { if (!stop) settle(); }, 120), { once: true });
+    }));
   }
 
   componentWillUnmount() {

@@ -620,7 +620,7 @@ class Component extends DCLogic {
         status: m.status,
         sessions: m.sessions,
         ctaLabel: m.ctaLabel,
-        ctaHref: m.open ? "mailto:admin@evokepsychotherapy.com" : "contact.html#consult",
+        ctaHref: m.open ? "mailto:admin@evokepsychotherapy.com" : "contact.html?therapist=" + encodeURIComponent(m.name.split(",")[0].trim()) + "#consult",
         paragraphs: m.paragraphs.map(text => ({ text })),
         focus: m.focus.map(text => ({ text })),
         rowStyle: {
