@@ -190,6 +190,56 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
     </section>
   </sc-for>
 
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px)">
+      <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">In training</p>
+      <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 44px;max-width:24ch;text-wrap:pretty">A therapy dog joining the practice.</h2>
+      <sc-for list="{{ companions }}" as="s" hint-placeholder-count="1">
+        <div style="{{ s.rowStyle }}">
+          <div style="flex:0 1 320px;min-width:260px">
+            <sc-if value="{{ s.hasPhoto }}" hint-placeholder-val="{{ true }}">
+              <div style="width:100%;aspect-ratio:4/5;position:relative">
+                <image-slot id="{{ s.slotId }}" src="{{ s.photo }}" shape="rect" placeholder="{{ s.photoHint }}"></image-slot>
+              </div>
+            </sc-if>
+            <sc-if value="{{ s.noPhoto }}" hint-placeholder-val="{{ false }}">
+              <div style="width:100%;aspect-ratio:4/5;border:2px dashed var(--color-divider);display:flex;align-items:center;justify-content:center;padding:24px">
+                <p style="margin:0;font-size:14px;text-align:center;color:color-mix(in srgb,var(--color-text) 62%,transparent)">{{ s.photoHint }}</p>
+              </div>
+            </sc-if>
+            <div style="border-top:2px solid var(--color-divider);margin-top:20px;padding-top:18px">
+              <h3 style="font-size:22px;margin:0 0 4px">{{ s.name }}</h3>
+              <p style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">{{ s.role }}</p>
+              <sc-if value="{{ s.hasStatus }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:0;font-size:13px;font-weight:600;display:inline-block;padding:5px 12px;color:var(--tan);border:1px solid var(--tan)">{{ s.status }}</p>
+              </sc-if>
+            </div>
+          </div>
+          <div style="flex:1 1 460px;min-width:280px">
+            <sc-if value="{{ s.hasTagline }}" hint-placeholder-val="{{ false }}">
+              <div style="float:right;width:min(32%,210px);background:var(--ink-deep);padding:22px 20px;margin:4px 0 22px 30px">
+                <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(19px,1.7vw,23px);line-height:1.2;letter-spacing:-0.02em;margin:0;color:#fff;text-wrap:pretty">{{ s.tagline }}</p>
+              </div>
+            </sc-if>
+            <sc-for list="{{ s.paragraphs }}" as="para" hint-placeholder-count="2">
+              <sc-if value="{{ para.plain }}" hint-placeholder-val="{{ true }}">
+                <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
+              </sc-if>
+              <sc-if value="{{ para.italic }}" hint-placeholder-val="{{ false }}">
+                <p style="font-size:17px;font-style:italic;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
+              </sc-if>
+            </sc-for>
+            <sc-if value="{{ s.hasNote }}" hint-placeholder-val="{{ true }}">
+              <div style="clear:both;border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px">
+                <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ s.contactNote }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
   <section style="border-bottom:2px solid var(--color-divider)">
     <div style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px)">
       <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Practice staff</p>
@@ -216,6 +266,11 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
             </div>
           </div>
           <div style="flex:1 1 460px;min-width:280px">
+            <sc-if value="{{ s.hasTagline }}" hint-placeholder-val="{{ false }}">
+              <div style="float:right;width:min(32%,210px);background:var(--ink-deep);padding:22px 20px;margin:4px 0 22px 30px">
+                <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(19px,1.7vw,23px);line-height:1.2;letter-spacing:-0.02em;margin:0;color:#fff;text-wrap:pretty">{{ s.tagline }}</p>
+              </div>
+            </sc-if>
             <sc-for list="{{ s.paragraphs }}" as="para" hint-placeholder-count="2">
               <sc-if value="{{ para.plain }}" hint-placeholder-val="{{ true }}">
                 <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
@@ -224,9 +279,11 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
                 <p style="font-size:17px;font-style:italic;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">{{ para.text }}</p>
               </sc-if>
             </sc-for>
-            <div style="border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px">
-              <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ s.contactNote }}</p>
-            </div>
+            <sc-if value="{{ s.hasNote }}" hint-placeholder-val="{{ true }}">
+              <div style="clear:both;border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px">
+                <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ s.contactNote }}</p>
+              </div>
+            </sc-if>
           </div>
         </div>
       </sc-for>
@@ -412,7 +469,7 @@ const STAFF = [
       "She trained in pharmacology and was working in a hospital when her sister-in-law, opening an internal medicine practice, asked her to take on the billing. She has watched the medical and billing fields change across nearly forty years, from claims typed by hand to everything that came after.",
       "Before starting the business she supervised business services and billing for a large home care agency, taught medical billing and medical terminology at Ross Medical and Business Trade School, and managed a large pediatric practice. Since 2018 she has worked solely with mental health practitioners."
     ],
-    contactNote: "Billing questions: 586-598-8436 or donna@solutionsmedbilling.com."
+    contactNote: "Billing questions: 586-598-8436 or sara@solutionsmedbilling.com."
   },
   {
     slotId: "staff-donna-opt",
@@ -422,16 +479,32 @@ const STAFF = [
     role: "Billing & insurance",
     status: "",
     paragraphs: [
-      "Donna works alongside Sara at Solutions Medical Billing, verifying benefits before a first session and following claims through to the end. She joined the firm in 2018.",
+      "Donna works alongside Sara at Solutions Medical Billing, verifying benefits before a first session and following claims through to the end. She joined the firm in 2018. She manages the documents platform, assists in billing, and answers all billing inquiries.",
       "She brings administrative experience from three decades of work: the public affairs department at the Budd Company, the office of a construction company, real estate, and the management of a group mental health therapy practice. She is at her best untangling complicated problems, which is useful when the problem is an insurance company."
     ],
     contactNote: "Billing questions: 586-598-8436 or donna@solutionsmedbilling.com."
   },
   {
+    slotId: "staff-darcy-opt",
+    photo: "assets/mrdarcy-garden.webp",
+    photoHint: "Portrait of Mr. Darcy",
+    name: "Mr. Darcy",
+    role: "Office companion",
+    status: "",
+    paragraphs: [
+      "Mr. Darcy attends morning staff meetings, where he offers his sage advice on the day ahead and listens a great deal more than he speaks. He has a sense for when the room has been working too long without stopping, and he makes the case for a walk, or for a snack, with more persistence than anyone else on staff.",
+      "His contribution is mostly a matter of timing. Practices like this one run on attention, and attention needs tending, so the small interruptions he insists on tend to be the reason the afternoon goes better than the morning. He is a steady presence in the office and a reliable argument for taking a break."
+    ]
+  }
+];
+
+const COMPANIONS = [
+  {
     slotId: "staff-juniper-opt",
     photo: "assets/juniper-garden-2.webp",
     photoHint: "Portrait of Juniper",
     name: "Juniper",
+    tagline: "Presence does most of the work.",
     role: "Therapy dog",
     status: "Currently in training",
     paragraphs: [
@@ -444,6 +517,38 @@ const STAFF = [
     contactNote: "Ask about Juniper when you schedule."
   }
 ];
+
+function mapPeople(list) {
+  return list.map(s => ({
+    rowStyle: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "56px",
+      alignItems: "flex-start",
+      borderTop: "2px solid var(--color-divider)",
+      paddingTop: "40px",
+      flexDirection: "row"
+    },
+    slotId: s.slotId,
+    photo: s.photo || undefined,
+    hasPhoto: !!s.photo,
+    noPhoto: !s.photo,
+    photoHint: s.photoHint,
+    name: s.name,
+    tagline: s.tagline,
+    hasTagline: !!s.tagline,
+    role: s.role,
+    status: s.status,
+    hasStatus: !!s.status,
+    contactNote: s.contactNote,
+    hasNote: !!s.contactNote,
+    paragraphs: s.paragraphs.map(p => {
+      const text = typeof p === "string" ? p : p.text;
+      const italic = typeof p === "object" && !!p.italic;
+      return { text, italic, plain: !italic };
+    })
+  }));
+}
 
 class Component extends DCLogic {
   state = { vw: typeof window !== "undefined" ? window.innerWidth : 1200, navOpen: false, scrolled: false };
@@ -580,32 +685,8 @@ class Component extends DCLogic {
           ") 0%, rgba(27,29,34," + Math.min(0.8, 0.34 + scrim / 100) +
           ") 46%, rgba(27,29,34," + Math.min(0.6, 0.1 + scrim / 140) + ") 100%)"
       },
-      staff: STAFF.map((s, i) => ({
-        rowStyle: {
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "56px",
-          alignItems: "flex-start",
-          borderTop: "2px solid var(--color-divider)",
-          paddingTop: "40px",
-          flexDirection: "row"
-        },
-        slotId: s.slotId,
-        photo: s.photo || undefined,
-        hasPhoto: !!s.photo,
-        noPhoto: !s.photo,
-        photoHint: s.photoHint,
-        name: s.name,
-        role: s.role,
-        status: s.status,
-        hasStatus: !!s.status,
-        contactNote: s.contactNote,
-        paragraphs: s.paragraphs.map(p => {
-          const text = typeof p === "string" ? p : p.text;
-          const italic = typeof p === "object" && !!p.italic;
-          return { text, italic, plain: !italic };
-        })
-      })),
+      staff: mapPeople(STAFF),
+      companions: mapPeople(COMPANIONS),
       members: TEAM.map((m, i) => ({
         slotId: m.slotId,
         anchorId: m.name.split(/[\s,]/)[0].toLowerCase(),

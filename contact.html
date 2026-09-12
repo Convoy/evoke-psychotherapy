@@ -334,9 +334,9 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Preferred therapist</span>
           <select name="therapist" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0">
             <option>No preference &mdash; match me</option>
-            <option>Lori Guidone</option>
-            <option>Victoria Orbe</option>
-            <option>James Triumph</option>
+            <option>Lori Guidone, PA, MA, LPC</option>
+            <option>Victoria Orbe, LMSW, CCS, CAADC</option>
+            <option>James Triumph, MA, LLPC</option>
           </select>
         </label>
         <label style="display:grid;gap:7px">
@@ -471,7 +471,8 @@ class Component extends DCLogic {
     const setChoice = () => {
       const s = sel();
       if (!s || !name) return;
-      const opt = Array.from(s.options).find(o => o.text.trim().toLowerCase() === name.trim().toLowerCase());
+      const key = v => v.split(",")[0].trim().toLowerCase();
+      const opt = Array.from(s.options).find(o => key(o.text) === key(name));
       if (opt) s.value = opt.value || opt.text;
     };
     const wanted = () => {
