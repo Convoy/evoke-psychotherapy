@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -86,37 +90,9 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
 @media (prefers-reduced-motion:reduce){
   [data-hero-drift]{animation:none !important;transform:none !important}
 }
-
-.hv-1:hover{color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)}
-.hv-2:hover{color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)}
-.hv-3:hover{color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)}
-.hv-4:hover{color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)}
-.hv-5:hover{background:var(--color-accent-600)}
-.hv-6:hover{background:var(--color-accent-600)}
-.hv-7:hover{background:rgba(255,255,255,0.14);border-color:#fff}
-.hv-8:hover{background:var(--color-accent-600)}
-.hv-9:hover{background:var(--color-accent-100)}
-.hv-10:hover{background:var(--color-accent-600)}
-.hv-11:hover{background:var(--color-accent-100);border-color:var(--color-accent-400)}
-.hv-12:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-13:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-14:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-15:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-16:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-17:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-18:hover{background:var(--color-accent-100);padding-left:12px}
-.hv-19:hover{background:var(--color-accent-100);border-color:var(--color-accent-400)}
-.hv-20:hover{transform:translateY(-6px)}
-.hv-21:hover{color:var(--color-accent-700)}
-.hv-22:hover{transform:translateY(-6px)}
-.hv-23:hover{color:var(--color-accent-700)}
-.hv-24:hover{transform:translateY(-6px)}
-.hv-25:hover{color:var(--color-accent-700)}
-.hv-26:hover{background:var(--color-accent-100)}
 </style>
-</head>
-<body>
-<x-dc>
+</helmet>
+
 <div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:clip">
 
   <header style="{{ headerStyle }}">
@@ -128,11 +104,11 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       <sc-if value="{{ desktopNav }}" hint-placeholder-val="{{ true }}">
       <nav style="flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2vw,30px)">
         <a href="index.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Home</a>
-        <a href="about.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="hv-1">About</a>
-        <a href="team.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="hv-2">Our Team</a>
-        <a href="services.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="hv-3">Services</a>
-        <a href="contact.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="hv-4">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="hv-5">Book a session</a>
+        <a href="about.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" style-hover="color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)">About</a>
+        <a href="team.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" style-hover="color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)">Our Team</a>
+        <a href="services.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" style-hover="color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)">Services</a>
+        <a href="contact.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" style-hover="color:var(--color-accent-700);border-bottom-color:var(--color-accent-300)">Contact &amp; FAQ</a>
+        <a href="contact.html#consult" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" style-hover="background:var(--color-accent-600)">Book a session</a>
       </nav>
       </sc-if>
 
@@ -173,8 +149,8 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h1 style="font-size:clamp(42px,7.4vw,96px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 clamp(22px,3vw,34px);max-width:15ch;color:#fff;text-wrap:pretty">Therapy that meets you where you are.</h1>
         <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.6;max-width:52ch;margin:0 0 clamp(30px,4vw,42px);color:#f4f2ee">A Kalamazoo practice offering individual and couples therapy, plus clinical supervision for limited licensed counselors. Unhurried, collaborative, and built on the belief that you already carry a great deal of what you need.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-          <a href="contact.html#consult" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="hv-6">Book a free 15-minute consult</a>
-          <a href="services.html" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="hv-7">See services</a>
+          <a href="contact.html#consult" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-600)">Book a free 15-minute consult</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:rgba(255,255,255,0.14);border-color:#fff">See services</a>
         </div>
       </div>
     </div>
@@ -189,13 +165,13 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h1 style="font-size:clamp(40px,5.6vw,76px);line-height:1;letter-spacing:-0.035em;margin:0 0 26px;max-width:15ch;text-wrap:pretty">Therapy that meets you where you are.</h1>
         <p style="font-size:19px;line-height:1.65;max-width:52ch;margin:0 0 36px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">A Kalamazoo practice offering individual and couples therapy, plus clinical supervision for limited licensed counselors. Unhurried, collaborative, and built on the belief that you already carry a great deal of what you need.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-          <a href="contact.html#consult" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="hv-8">Book a free 15-minute consult</a>
-          <a href="services.html" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="hv-9">See services</a>
+          <a href="contact.html#consult" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-600)">Book a free 15-minute consult</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-100)">See services</a>
         </div>
       </div>
       <div style="align-self:stretch;min-height:min(80svh,720px);position:relative;overflow:hidden;border-left:2px solid var(--color-divider)">
         <div data-parallax="0.08" style="position:absolute;inset:-8% 0;will-change:transform">
-          <image-slot id="evoke-hero-sofa-split-opt" src="assets/evoke-hero-sofa-v2.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
+          <image-slot id="evoke-hero-sofa-opt" src="assets/evoke-hero-sofa-v2.webp" shape="rect" placeholder="Drop a hero photograph — window light, a quiet room, or Michigan woods"></image-slot>
         </div>
       </div>
     </div>
@@ -205,7 +181,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
     <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,104px) clamp(20px,4vw,32px)">
       <p data-reveal="1" style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 clamp(28px,4vw,44px)">If this sounds familiar</p>
-      <h2 data-reveal="1" style="font-size:clamp(26px,3.8vw,46px);line-height:1.18;letter-spacing:-0.025em;font-family:var(--font-heading);font-weight:600;max-width:30ch;margin:0 0 clamp(32px,4vw,48px);text-wrap:pretty">You have been holding it together for a long time, and it is starting to cost more than it used to.</h2>
+      <p data-reveal="1" style="font-size:clamp(26px,3.8vw,46px);line-height:1.18;letter-spacing:-0.025em;font-family:var(--font-heading);font-weight:600;max-width:30ch;margin:0 0 clamp(32px,4vw,48px);text-wrap:pretty">You have been holding it together for a long time, and it is starting to cost more than it used to.</p>
       <div style="display:grid;grid-template-columns:1fr;gap:clamp(18px,2vw,24px);max-width:62ch;border-top:2px solid var(--color-divider);padding-top:clamp(24px,3vw,36px)">
         <p data-reveal="1" style="font-size:17px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Maybe the anxiety does not switch off at the end of the day. Maybe something from years ago still sits in your body, and you have never quite had the words for it. Maybe you are good at your job, good at caring for other people, and quietly running on empty.</p>
         <p data-reveal="1" style="font-size:17px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">You do not have to arrive with it organized. Bringing it in unfinished is the work.</p>
@@ -219,7 +195,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Individual therapy</p>
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.02;margin:0 0 24px;max-width:16ch;text-wrap:pretty">Weekly work, at your pace.</h2>
         <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Fifty-three-minute sessions for adults working through anxiety, trauma, depression, grief, and the transitions that rearrange a life. Relational, trauma-informed, and adapted to you rather than to a protocol.</p>
-        <a href="services.html#therapy" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="hv-10">Learn about therapy</a>
+        <a href="services.html#therapy" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-600)">Learn about therapy</a>
       </div>
       <div style="min-height:min(72svh,620px);position:relative;overflow:hidden;background:var(--color-surface)">
         <div data-parallax="0.09" style="position:absolute;inset:-9% 0;will-change:transform">
@@ -240,7 +216,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Clinical supervision</p>
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.02;margin:0 0 24px;max-width:16ch;text-wrap:pretty">Support for the clinician you are becoming.</h2>
         <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Board-approved supervision for Therapists accruing hours toward full licensure in Michigan. Developmental rather than evaluative: we look at your cases, and at how you are holding them.</p>
-        <a href="services.html#supervision" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="hv-11">Learn about supervision</a>
+        <a href="services.html#supervision" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" style-hover="background:var(--color-accent-100);border-color:var(--color-accent-400)">Learn about supervision</a>
       </div>
     </div>
   </section>
@@ -248,17 +224,17 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   <section style="border-bottom:2px solid var(--color-divider)">
     <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,72px)">
       <div data-reveal="1" style="max-width:34ch">
-        <h2 style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Who we work with</h2>
+        <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Who we work with</p>
         <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 75%,transparent)">Young adults to elders across Michigan. If what brought you here is not on this list, it still belongs in the room.</p>
       </div>
       <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 clamp(24px,3vw,44px);border-top:2px solid var(--color-divider)">
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-12">Anxiety</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-13">Trauma</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-14">Depression</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-15">Grief</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-16">Life transitions</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-17">Young adults to elders</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="hv-18">Couples</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Anxiety</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Trauma</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Depression</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Grief</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Life transitions</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Young adults to elders</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" style-hover="background:var(--color-accent-100);padding-left:12px">Couples</div>
         <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider)"><span style="display:inline-block;padding:3px 10px;background:linear-gradient(90deg,#f7c8c0 0 20%,#f8ddb8 20% 40%,#f5eeb6 40% 60%,#c9e2c2 60% 80%,#c6d3ec 80% 100%);color:var(--color-text)">LGBTQ+ affirming</span></div>
       </div>
     </div>
@@ -302,37 +278,37 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           <h2 style="font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0 0 22px;max-width:20ch;text-wrap:pretty">A small group of therapists, growing carefully.</h2>
           <p style="font-size:17px;line-height:1.7;max-width:56ch;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">evoke psychotherapy began as a solo practice and is adding clinicians who share the same unhurried approach. You can read about each therapist and ask for the one who sounds right.</p>
         </div>
-        <a href="team.html" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px;white-space:nowrap" class="hv-19">Meet the team</a>
+        <a href="team.html" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px;white-space:nowrap" style-hover="background:var(--color-accent-100);border-color:var(--color-accent-400)">Meet the team</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,3vw,40px)">
-        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" class="hv-20">
+        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-6px)">
           <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden;{{ portraitTone }}">
-            <a href="team.html#lori" style="display:block;position:absolute;inset:0" aria-label="Read Lori&#39;s bio"><image-slot id="evoke-portrait-home-opt" src="assets/lori-garden-opt.webp" shape="rect" placeholder="Drop a portrait"></image-slot></a>
+            <a href="team.html#lori" style="display:block;position:absolute;inset:0" aria-label="Read Lori's bio"><image-slot id="evoke-portrait-home-opt" src="assets/lori-garden-opt.webp" shape="rect" placeholder="Drop a portrait"></image-slot></a>
           </div>
           <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
-            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#lori" style="color:inherit;text-decoration:none" class="hv-21">Lori Guidone, PA, MA, LPC</a></h3>
+            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#lori" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-700)">Lori Guidone, PA, MA, LPC</a></h3>
             <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Founder &amp; Clinical Director</p>
             <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Attachment-focused depth work with intellectually curious adults, couples, and people in demanding careers.</p>
           </div>
         </div>
-        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" class="hv-22">
+        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-6px)">
           <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden">
-            <a href="team.html#victoria" style="display:block;position:absolute;inset:0" aria-label="Read Victoria&#39;s bio"><image-slot id="home-victoria-opt" src="assets/victoria-garden.webp" shape="rect" placeholder="Portrait of Victoria Orbe"></image-slot></a>
+            <a href="team.html#victoria" style="display:block;position:absolute;inset:0" aria-label="Read Victoria's bio"><image-slot id="home-victoria-opt" src="assets/victoria-garden.webp" shape="rect" placeholder="Portrait of Victoria Orbe"></image-slot></a>
           </div>
           <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
-            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#victoria" style="color:inherit;text-decoration:none" class="hv-23">Victoria Orbe, LMSW, CCS, CAADC</a></h3>
+            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#victoria" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-700)">Victoria Orbe, LMSW, CCS, CAADC</a></h3>
             <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Therapist</p>
             <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nearly a decade of experience in adolescent and family mental health, substance use, and trauma. Sees clients in English or Spanish.</p>
           </div>
         </div>
-        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" class="hv-24">
+        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" style-hover="transform:translateY(-6px)">
           <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden">
-            <a href="team.html#james" style="display:block;position:absolute;inset:0" aria-label="Read James&#39;s bio">
+            <a href="team.html#james" style="display:block;position:absolute;inset:0" aria-label="Read James's bio">
               <image-slot id="home-james-opt" src="assets/james-garden.webp" shape="rect" placeholder="Portrait of James Triumph"></image-slot>
             </a>
           </div>
           <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
-            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#james" style="color:inherit;text-decoration:none" class="hv-25">James Triumph, MA, LLPC</a></h3>
+            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#james" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-700)">James Triumph, MA, LLPC</a></h3>
             <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Clinical Mental Health Counselor</p>
             <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Sixteen years of frontline mental health experience, working with anger, anxiety, depression, and addiction through cognitive-behavioral, dialectical, and rational emotive therapies.</p>
           </div>
@@ -347,7 +323,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.03;margin:0 0 18px;max-width:20ch;color:#fff;text-wrap:pretty">The first step is a fifteen-minute conversation.</h2>
         <p style="margin:0;font-size:17px;line-height:1.7;max-width:52ch;color:#fff">No cost, no obligation. We talk about what you are looking for and whether working together makes sense.</p>
       </div>
-      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="hv-26">Book a consult</a>
+      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" style-hover="background:var(--color-accent-100)">Book a consult</a>
     </div>
   </section>
 
