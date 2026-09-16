@@ -192,11 +192,26 @@
         if (img) img.style.opacity = on ? "1" : "0.72";
       });
     };
+    var gTimer = 0, gPaused = false;
+    var gReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var startGal = function () {
+      if (gReduced || gBtns.length < 2) return;
+      clearInterval(gTimer);
+      gTimer = setInterval(function () {
+        if (gPaused) return;
+        setGal((gCur + 1) % gBtns.length);
+      }, 5000);
+    };
     Array.prototype.forEach.call(gBtns, function (el, i) {
-      el.addEventListener("click", function () { setGal(i); });
+      el.addEventListener("click", function () { setGal(i); startGal(); });
       el.addEventListener("mouseenter", function () { setGal(i); });
       el.addEventListener("focus", function () { setGal(i); });
     });
+    gal.addEventListener("pointerenter", function () { gPaused = true; });
+    gal.addEventListener("pointerleave", function () { gPaused = false; });
+    gal.addEventListener("focusin", function () { gPaused = true; });
+    gal.addEventListener("focusout", function () { gPaused = false; });
+    startGal();
   }
 
 })();
