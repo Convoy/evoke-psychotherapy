@@ -7,12 +7,12 @@
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <title>Our team | evoke psychotherapy pllc</title>
-<meta name="description" content="Meet the clinicians and staff at evoke psychotherapy: Lori Guidone, Victoria Orbe, and James Triumph, plus the people who keep the practice running.">
+<meta name="description" content="Meet the clinicians and staff at evoke psychotherapy: Lori Guidone, Victoria Orbe, Tiffany Scurto, and James Triumph, plus the people who keep the practice running.">
 <link rel="canonical" href="https://www.evokepsychotherapy.com/team">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="evoke psychotherapy pllc">
 <meta property="og:title" content="Our team | evoke psychotherapy pllc">
-<meta property="og:description" content="Meet the clinicians and staff at evoke psychotherapy: Lori Guidone, Victoria Orbe, and James Triumph, plus the people who keep the practice running.">
+<meta property="og:description" content="Meet the clinicians and staff at evoke psychotherapy: Lori Guidone, Victoria Orbe, Tiffany Scurto, and James Triumph, plus the people who keep the practice running.">
 <meta property="og:url" content="https://www.evokepsychotherapy.com/team">
 <meta property="og:image" content="https://www.evokepsychotherapy.com/assets/og-evoke.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Our team | evoke psychotherapy pllc">
-<meta name="twitter:description" content="Meet the clinicians and staff at evoke psychotherapy: Lori Guidone, Victoria Orbe, and James Triumph, plus the people who keep the practice running.">
+<meta name="twitter:description" content="Meet the clinicians and staff at evoke psychotherapy: Lori Guidone, Victoria Orbe, Tiffany Scurto, and James Triumph, plus the people who keep the practice running.">
 <meta name="twitter:image" content="https://www.evokepsychotherapy.com/assets/og-evoke.jpg">
 <meta name="theme-color" content="#f7f5f0">
 <link rel="stylesheet" href="_ds/modernist-d6ffb30b-7b06-4ec4-96dd-f34c1b12115a/styles.css">
@@ -47,6 +47,7 @@
       "employee": [
         { "@id": "https://www.evokepsychotherapy.com/team#lori" },
         { "@id": "https://www.evokepsychotherapy.com/team#victoria" },
+        { "@id": "https://www.evokepsychotherapy.com/team#tiffany" },
         { "@id": "https://www.evokepsychotherapy.com/team#james" }
       ]
     },
@@ -124,6 +125,41 @@
     },
     {
       "@type": "Person",
+      "@id": "https://www.evokepsychotherapy.com/team#tiffany",
+      "name": "Tiffany Scurto",
+      "honorificSuffix": "LCSW, CAADC, SAP, PMH-C, CCATP",
+      "jobTitle": "Therapist",
+      "description": "Nineteen years of clinical social work with adults and couples, focused on anxiety, substance use, and perinatal mental health.",
+      "url": "https://www.evokepsychotherapy.com/team#tiffany",
+      "image": "https://www.evokepsychotherapy.com/assets/tiffany-garden.webp",
+      "worksFor": { "@id": "https://www.evokepsychotherapy.com/#practice" },
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Licensed Clinical Social Worker (LCSW), Michigan" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Certified Advanced Alcohol and Drug Counselor (CAADC)" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Substance Abuse Professional (SAP)" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Perinatal Mental Health Certification (PMH-C)" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Certified Clinical Anxiety Treatment Professional (CCATP)" }
+      ],
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "Wayne State University School of Social Work" }
+      ],
+      "knowsAbout": [
+        "Anxiety",
+        "Substance use and addiction",
+        "Perinatal and postpartum mental health",
+        "Depression",
+        "Mood disorders",
+        "Stress",
+        "Couples therapy",
+        "Cognitive behavioral therapy",
+        "Acceptance and commitment therapy",
+        "Dialectical behavior therapy",
+        "Solution focused brief therapy"
+      ],
+      "areaServed": { "@type": "State", "name": "Michigan" }
+    },
+    {
+      "@type": "Person",
       "@id": "https://www.evokepsychotherapy.com/team#james",
       "name": "James Triumph",
       "honorificSuffix": "MA, LLPC",
@@ -182,6 +218,12 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   100%{transform:scale(1.14) translate3d(-1.6%,-1%,0)}
 }
 @keyframes panelDrop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+[data-photo-zoom] img{transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+[data-photo-zoom]:hover img,[data-photo-zoom]:focus-visible img{transform:scale(1.045)}
+@media (prefers-reduced-motion:reduce){
+  [data-photo-zoom] img{transition:none}
+  [data-photo-zoom]:hover img,[data-photo-zoom]:focus-visible img{transform:none}
+}
 @media (prefers-reduced-motion:reduce){
   [data-hero-drift]{animation:none !important;transform:none !important}
 }
@@ -204,7 +246,8 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
 :focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
 .x1:hover{color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent-300) !important}
 .x2:hover{background:var(--color-accent-600) !important}
-.x3:hover{background:var(--color-accent-100) !important}
+.x3:hover{color:var(--color-accent-700) !important}
+.x4:hover{background:var(--color-accent-100) !important}
 </style>
 </head>
 <body>
@@ -257,6 +300,62 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h1 style="font-size:clamp(40px,6.8vw,88px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 clamp(20px,3vw,28px);max-width:16ch;color:#fff;text-wrap:pretty">The people you would be working with.</h1>
         <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.6;max-width:54ch;margin:0;color:#f4f2ee">Fit matters more than credentials. Read a little about each clinician, and if someone sounds right, ask for them by name when you reach out.</p>
       </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(32px,4vw,48px) clamp(20px,4vw,32px)">
+      <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin:0 0 22px">Jump to a clinician</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:clamp(18px,2.4vw,32px)">
+        
+          <a href="#lori" data-photo-zoom style="display:block;text-decoration:none;color:var(--color-text);border-top:2px solid var(--color-divider);padding-top:14px" class="x3">
+            
+              <div style="width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/lori-garden-opt.webp" alt="Lori Guidone" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+            
+            <p style="font-family:var(--font-heading);font-weight:600;font-size:16px;line-height:1.25;margin:14px 0 5px">Lori Guidone</p>
+            <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0">Founder &amp; Clinical Director</p>
+          </a>
+        
+          <a href="#victoria" data-photo-zoom style="display:block;text-decoration:none;color:var(--color-text);border-top:2px solid var(--color-divider);padding-top:14px" class="x3">
+            
+              <div style="width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/victoria-garden.webp" alt="Victoria Orbe" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+            
+            <p style="font-family:var(--font-heading);font-weight:600;font-size:16px;line-height:1.25;margin:14px 0 5px">Victoria Orbe</p>
+            <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0">Therapist</p>
+          </a>
+        
+          <a href="#tiffany" data-photo-zoom style="display:block;text-decoration:none;color:var(--color-text);border-top:2px solid var(--color-divider);padding-top:14px" class="x3">
+            
+              <div style="width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/tiffany-garden.webp" alt="Tiffany Scurto" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+            
+            <p style="font-family:var(--font-heading);font-weight:600;font-size:16px;line-height:1.25;margin:14px 0 5px">Tiffany Scurto</p>
+            <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0">Therapist</p>
+          </a>
+        
+          <a href="#james" data-photo-zoom style="display:block;text-decoration:none;color:var(--color-text);border-top:2px solid var(--color-divider);padding-top:14px" class="x3">
+            
+              <div style="width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/james-garden.webp" alt="James Triumph" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+            
+            <p style="font-family:var(--font-heading);font-weight:600;font-size:16px;line-height:1.25;margin:14px 0 5px">James Triumph</p>
+            <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0">Clinical Mental Health Counselor</p>
+          </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:2px solid var(--color-divider);background:var(--color-bg)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(48px,6vw,76px) clamp(20px,4vw,32px)">
+      <p style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 18px">Clinicians</p>
+      <h2 style="font-size:clamp(26px,3vw,36px);margin:0;max-width:26ch;text-wrap:pretty">The full biographies.</h2>
     </div>
   </section>
 
@@ -395,7 +494,70 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       </div>
     </section>
   
-    <section id="james" style="scroll-margin-top:84px;border-bottom:2px solid var(--color-divider);background:var(--color-bg)">
+    <section id="tiffany" style="scroll-margin-top:84px;border-bottom:2px solid var(--color-divider);background:var(--color-bg)">
+      <div data-reveal="1" style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start;flex-direction:row">
+        <div style="flex:0 1 320px;min-width:260px">
+          
+            <div style="width:100%;aspect-ratio:4/5;position:relative">
+              <img src="assets/tiffany-garden.webp" alt="Tiffany Scurto" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+          
+          
+          <div style="border-top:2px solid var(--color-divider);margin-top:20px;padding-top:18px">
+            <h2 style="font-size:22px;margin:0 0 4px">Tiffany Scurto, LCSW, CAADC, SAP, PMH-C, CCATP</h2>
+            <p style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">Therapist</p>
+            <p style="margin:0;font-size:13px;font-weight:600;display:inline-block;padding:5px 12px;color:var(--color-accent-700);border:1px solid var(--color-accent-400);background:var(--color-accent-100)">Accepting new clients</p>
+          </div>
+        </div>
+        <div style="flex:1 1 460px;min-width:280px">
+          
+            <div style="float:right;width:min(32%,210px);background:var(--ink-deep);padding:22px 20px;margin:4px 0 22px 30px">
+              <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(19px,1.7vw,23px);line-height:1.2;letter-spacing:-0.02em;margin:0;color:#fff;text-wrap:pretty">Specialist depth in anxiety, addiction, and new parenthood.</p>
+            </div>
+          
+          
+            <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Tiffany Scurto has spent nineteen years in clinical practice and holds five credentials, each earned in a different corner of the work: Licensed Clinical Social Worker, Certified Advanced Alcohol and Drug Counselor (CAADC), Substance Abuse Professional (SAP), Perinatal Mental Health Certified (PMH-C), and Clinical Certified Anxiety Treatment Professional (CCATP). Few clinicians carry specialty training in substance use, anxiety, and the perinatal period at once. Tiffany does, and it means the person in front of her rarely has to be sent elsewhere.</p>
+          
+            <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">She earned her Master of Social Work at the Wayne State University School of Social Work and was certified in addiction counseling within a year of graduating. Nineteen years on, she is still adding to that training — her anxiety-treatment certification is one of the newest. Her career has run on two tracks at once: more than a decade in community mental health with Catholic Charities of Southeast Michigan, and, since 2023, her own practice, First Step Counseling, PLLC. Across both, she has worked with adults at every stage, from new parents to clients well into later life, individually and as couples.</p>
+          
+            <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Tiffany's clients tend to arrive worn down and caught in patterns they can name but cannot move: depression, anxiety, mood instability, anger, stress, substance use, a relationship under strain, the hard months after a birth. Her work is to find what sits underneath, make the pattern visible, and give you something concrete to do about it. You leave a session with feedback and strategies you can use before the next one.</p>
+          
+            <p style="font-size:17px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Her method is wide and deliberately chosen — cognitive-behavioral work on the link between thought and behavior, acceptance and commitment for what will not be argued away, dialectical behavior therapy for regulating intense emotion, and mindfulness and solution-focused approaches when the need is immediate. She also traces how early experience shaped the way a person thinks and reacts today, so the change holds after the work ends.</p>
+          
+          <div style="clear:both;border-top:2px solid var(--color-divider);margin-top:16px;padding-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px">
+            <div>
+              <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Focus areas</h4>
+              <ul style="margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:15px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">
+                
+                  <li>Anxiety</li>
+                
+                  <li>Substance use and addiction</li>
+                
+                  <li>Pregnancy, prenatal, and postpartum</li>
+                
+                  <li>Depression</li>
+                
+                  <li>Mood instability</li>
+                
+                  <li>Stress and overwhelm</li>
+                
+                  <li>Couples</li>
+                
+                  <li>Women's issues</li>
+                
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Sessions</h4>
+              <p style="font-size:15px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">53 minutes, weekly or bi-weekly. Telehealth throughout Michigan.</p>
+              <a href="contact.html?therapist=Tiffany%20Scurto#consult" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Tiffany</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="james" style="scroll-margin-top:84px;border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
       <div data-reveal="1" style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,80px) clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start;flex-direction:row">
         <div style="flex:0 1 320px;min-width:260px">
           
@@ -680,7 +842,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 14px;max-width:22ch;color:#fff;text-wrap:pretty">Not sure who to ask for?</h2>
         <p style="margin:0;font-size:17px;max-width:52ch;color:rgba(255,255,255,0.92)">Tell us what you are looking for and we will match you with the clinician who fits best.</p>
       </div>
-      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x3">Request a consult</a>
+      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x4">Request a consult</a>
     </div>
   </section>
 

@@ -82,6 +82,18 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   100%{transform:scale(1.14) translate3d(-1.6%,-1%,0)}
 }
 @keyframes panelDrop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+[data-photo-zoom] img{transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+[data-photo-zoom]:hover img,[data-photo-zoom]:focus-visible img{transform:scale(1.045)}
+@media (prefers-reduced-motion:reduce){
+  [data-photo-zoom] img{transition:none}
+  [data-photo-zoom]:hover img,[data-photo-zoom]:focus-visible img{transform:none}
+}
+[data-gal-count="5"],[data-gal-count="6"]{grid-template-columns:repeat(3,minmax(0,168px)) !important}
+@media (max-width:900px){
+  [data-team-grid]{grid-template-columns:minmax(0,1fr) !important}
+  [data-gal-cols]{grid-template-columns:minmax(0,1fr) !important}
+  [data-gal-strip]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
 @media (prefers-reduced-motion:reduce){
   [data-hero-drift]{animation:none !important;transform:none !important}
 }
@@ -107,9 +119,10 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
 .x3:hover{background:rgba(255,255,255,0.14) !important;border-color:#fff !important}
 .x4:hover{background:var(--color-accent-100) !important;border-color:var(--color-accent-400) !important}
 .x5:hover{background:var(--color-accent-100) !important;padding-left:12px !important}
-.x6:hover{transform:translateY(-6px) !important}
-.x7:hover{color:var(--color-accent-700) !important}
-.x8:hover{background:var(--color-accent-100) !important}
+.x6:hover{border-bottom-color:var(--color-accent) !important;color:var(--color-accent-700) !important}
+.x7:hover{border-color:var(--color-accent) !important}
+.x8:focus-visible{outline:2px solid var(--color-accent) !important;outline-offset:2px !important}
+.x9:hover{background:var(--color-accent-100) !important}
 </style>
 </head>
 <body>
@@ -204,7 +217,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));align-items:stretch">
       <div style="min-height:min(72svh,620px);position:relative;overflow:hidden;background:var(--color-surface);order:0">
         <div data-parallax="0.09" style="position:absolute;inset:-9% 0;will-change:transform">
-          <img src="assets/evoke-supervision.webp" alt="A desk with notes beside a window" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+          <img src="assets/evoke-supervision-desk.webp" alt="A lavender desk set with pens and an evoke psychotherapy card at the practice front desk" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </div>
       <div data-reveal="1" style="padding:clamp(52px,8vw,96px) clamp(20px,4vw,32px);display:flex;flex-direction:column;justify-content:center;width:100%;max-width:620px">
@@ -266,47 +279,102 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   
 
   <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
-    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,4vw,32px)">
-      <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:end;justify-content:space-between;margin-bottom:clamp(36px,5vw,56px)">
-        <div style="flex:1 1 420px">
-          <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Our team</p>
-          <h2 style="font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0 0 22px;max-width:20ch;text-wrap:pretty">A small group of therapists, growing carefully.</h2>
-          <p style="font-size:17px;line-height:1.7;max-width:56ch;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">evoke psychotherapy began as a solo practice and is adding clinicians who share the same unhurried approach. You can read about each therapist and ask for the one who sounds right.</p>
-        </div>
-        <a href="team.html" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px;white-space:nowrap" class="x4">Meet the team</a>
+    <div data-team-grid style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,4vw,32px);display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,72px);align-items:start">
+      <div data-reveal="1" style="display:flex;flex-direction:column;align-items:flex-start">
+        <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Our team</p>
+        <h2 style="font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0 0 22px;max-width:20ch;text-wrap:pretty">Several specialties under one roof.</h2>
+        <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 30px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">More than forty-five years of combined clinical experience. The aim is that what you bring can be met here, by the clinician trained for it.</p>
+        <a href="Team%20v3.dc.html" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Meet the team</a>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,3vw,40px)">
-        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" class="x6">
-          <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden;">
-            <a href="team.html#lori" style="display:block;position:absolute;inset:0" aria-label="Read Lori&#39;s bio"><img src="assets/lori-garden-opt.webp" alt="Lori Guidone, founder of evoke psychotherapy" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></a>
+
+      <div data-reveal="1" data-gallery style="display:flex;flex-direction:column;border:2px solid var(--color-divider);background:var(--color-bg);padding:clamp(20px,2.4vw,30px)">
+        <div data-gal-cols style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,2.4vw,32px);align-items:start">
+          <div style="position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+            
+              <img src="assets/lori-garden-opt.webp" alt="Lori Guidone" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 420ms ease">
+            
+              <img src="assets/victoria-garden.webp" alt="Victoria Orbe" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 420ms ease">
+            
+              <img src="assets/tiffany-garden.webp" alt="Tiffany Scurto" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 420ms ease">
+            
+              <img src="assets/james-garden.webp" alt="James Triumph" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 420ms ease">
+            
           </div>
-          <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
-            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#lori" style="color:inherit;text-decoration:none" class="x7">Lori Guidone, PA, MA, LPC</a></h3>
-            <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Founder &amp; Clinical Director</p>
-            <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Attachment-focused depth work with intellectually curious adults, couples, and people in demanding careers.</p>
+          <div style="position:relative;padding-top:2px">
+            
+              <div data-gal-cap style="display:block">
+                <h3 style="font-size:clamp(20px,1.7vw,24px);line-height:1.15;margin:0 0 8px;text-wrap:pretty">Lori Guidone, PA, MA, LPC</h3>
+                <p style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 16px">Founder &amp; Clinical Director</p>
+                <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
+                  <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Attachment-focused depth work with intellectually curious adults, couples, and people carrying the weight of demanding careers.</p>
+                </div>
+                <a href="team.html#lori" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Lori’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+              </div>
+            
+              <div data-gal-cap style="display:none">
+                <h3 style="font-size:clamp(20px,1.7vw,24px);line-height:1.15;margin:0 0 8px;text-wrap:pretty">Victoria Orbe, LMSW, CCS, CAADC</h3>
+                <p style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 16px">Therapist</p>
+                <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
+                  <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Nearly a decade in adolescent and family mental health, substance use, and trauma. Sees clients in English or Spanish.</p>
+                </div>
+                <a href="team.html#victoria" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Victoria’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+              </div>
+            
+              <div data-gal-cap style="display:none">
+                <h3 style="font-size:clamp(20px,1.7vw,24px);line-height:1.15;margin:0 0 8px;text-wrap:pretty">Tiffany Scurto, LCSW, CAADC, SAP, PMH‑C, CCATP</h3>
+                <p style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 16px">Therapist</p>
+                <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
+                  <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Nineteen years of clinical practice, with specialty training in substance use, anxiety, and the perinatal period.</p>
+                </div>
+                <a href="team.html#tiffany" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Tiffany’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+              </div>
+            
+              <div data-gal-cap style="display:none">
+                <h3 style="font-size:clamp(20px,1.7vw,24px);line-height:1.15;margin:0 0 8px;text-wrap:pretty">James Triumph, MA, LLPC</h3>
+                <p style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 16px">Clinical Mental Health Counselor</p>
+                <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
+                  <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Sixteen years of frontline experience with anger, anxiety, depression, and addiction, through cognitive-behavioral and dialectical therapies.</p>
+                </div>
+                <a href="team.html#james" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read James’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+              </div>
+            
           </div>
         </div>
-        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" class="x6">
-          <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden">
-            <a href="team.html#victoria" style="display:block;position:absolute;inset:0" aria-label="Read Victoria&#39;s bio"><img src="assets/victoria-garden.webp" alt="Victoria Orbe" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></a>
-          </div>
-          <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
-            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#victoria" style="color:inherit;text-decoration:none" class="x7">Victoria Orbe, LMSW, CCS, CAADC</a></h3>
-            <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Therapist</p>
-            <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nearly a decade of experience in adolescent and family mental health, substance use, and trauma. Sees clients in English or Spanish.</p>
-          </div>
-        </div>
-        <div data-reveal="1" style="transition:transform .35s cubic-bezier(.22,.61,.36,1)" class="x6">
-          <div style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden">
-            <a href="team.html#james" style="display:block;position:absolute;inset:0" aria-label="Read James&#39;s bio">
-              <img src="assets/james-garden.webp" alt="James Triumph" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
-            </a>
-          </div>
-          <div style="border-top:2px solid var(--color-divider);margin-top:18px;padding-top:16px">
-            <h3 style="font-size:clamp(19px,1.7vw,22px);margin:0 0 6px"><a href="team.html#james" style="color:inherit;text-decoration:none" class="x7">James Triumph, MA, LLPC</a></h3>
-            <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Clinical Mental Health Counselor</p>
-            <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Sixteen years of frontline mental health experience, working with anger, anxiety, depression, and addiction through cognitive-behavioral, dialectical, and rational emotive therapies.</p>
-          </div>
+
+        <div data-gal-strip data-gal-count="4" style="margin-top:clamp(22px,2.6vw,32px);border-top:2px solid var(--color-divider);padding-top:clamp(18px,2vw,24px);display:grid;justify-content:center;gap:clamp(10px,1.2vw,18px);grid-template-columns:repeat(4,minmax(0,142px))">
+          
+            <button type="button" data-gal-btn aria-pressed="true" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:var(--color-bg);border:2px solid var(--color-accent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
+              <span style="display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/lori-garden-opt.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 180ms ease;opacity:1">
+              </span>
+              <span style="display:block;padding:10px 0 0;min-height:42px;font-family:var(--font-heading);font-weight:600;font-size:13px;line-height:1.25;text-align:left;color:var(--color-text)">Lori Guidone</span>
+              <span style="display:block;padding:0;min-height:42px;font-size:10px;letter-spacing:0.14em;line-height:1.5;text-transform:uppercase;text-align:left;color:var(--tan)">PA, MA, LPC</span>
+            </button>
+          
+            <button type="button" data-gal-btn aria-pressed="false" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:transparent;border:2px solid color-mix(in srgb,var(--color-text) 16%,transparent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
+              <span style="display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/victoria-garden.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 180ms ease;opacity:0.72">
+              </span>
+              <span style="display:block;padding:10px 0 0;min-height:42px;font-family:var(--font-heading);font-weight:600;font-size:13px;line-height:1.25;text-align:left;color:var(--color-text)">Victoria Orbe</span>
+              <span style="display:block;padding:0;min-height:42px;font-size:10px;letter-spacing:0.14em;line-height:1.5;text-transform:uppercase;text-align:left;color:var(--tan)">LMSW, CCS, CAADC</span>
+            </button>
+          
+            <button type="button" data-gal-btn aria-pressed="false" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:transparent;border:2px solid color-mix(in srgb,var(--color-text) 16%,transparent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
+              <span style="display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/tiffany-garden.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 180ms ease;opacity:0.72">
+              </span>
+              <span style="display:block;padding:10px 0 0;min-height:42px;font-family:var(--font-heading);font-weight:600;font-size:13px;line-height:1.25;text-align:left;color:var(--color-text)">Tiffany Scurto</span>
+              <span style="display:block;padding:0;min-height:42px;font-size:10px;letter-spacing:0.14em;line-height:1.5;text-transform:uppercase;text-align:left;color:var(--tan)">LCSW, CAADC, SAP, PMH‑C, CCATP</span>
+            </button>
+          
+            <button type="button" data-gal-btn aria-pressed="false" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:transparent;border:2px solid color-mix(in srgb,var(--color-text) 16%,transparent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
+              <span style="display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/james-garden.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 180ms ease;opacity:0.72">
+              </span>
+              <span style="display:block;padding:10px 0 0;min-height:42px;font-family:var(--font-heading);font-weight:600;font-size:13px;line-height:1.25;text-align:left;color:var(--color-text)">James Triumph</span>
+              <span style="display:block;padding:0;min-height:42px;font-size:10px;letter-spacing:0.14em;line-height:1.5;text-transform:uppercase;text-align:left;color:var(--tan)">MA, LLPC</span>
+            </button>
+          
         </div>
       </div>
     </div>
@@ -318,7 +386,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.03;margin:0 0 18px;max-width:20ch;color:#fff;text-wrap:pretty">The first step is a fifteen-minute conversation.</h2>
         <p style="margin:0;font-size:17px;line-height:1.7;max-width:52ch;color:#fff">No cost, no obligation. We talk about what you are looking for and whether working together makes sense.</p>
       </div>
-      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x8">Book a consult</a>
+      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x9">Book a consult</a>
     </div>
   </section>
 

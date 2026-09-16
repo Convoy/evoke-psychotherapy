@@ -171,4 +171,32 @@
       window.addEventListener("load", function () { setTimeout(function () { if (!stop) settle(); }, 120); }, { once: true });
     }
   }
+  /* ---- home clinician gallery ------------------------------------------ */
+  var gal = document.querySelector("[data-gallery]");
+  if (gal) {
+    var gPhotos = gal.querySelectorAll("[data-gal-photo]");
+    var gCaps = gal.querySelectorAll("[data-gal-cap]");
+    var gBtns = gal.querySelectorAll("[data-gal-btn]");
+    var gCur = 0;
+    var setGal = function (n) {
+      if (n === gCur || n < 0 || n >= gBtns.length) return;
+      gCur = n;
+      Array.prototype.forEach.call(gPhotos, function (el, i) { el.style.opacity = i === n ? "1" : "0"; });
+      Array.prototype.forEach.call(gCaps, function (el, i) { el.style.display = i === n ? "block" : "none"; });
+      Array.prototype.forEach.call(gBtns, function (el, i) {
+        var on = i === n;
+        el.style.borderColor = on ? "var(--color-accent)" : "color-mix(in srgb,var(--color-text) 16%,transparent)";
+        el.style.background = on ? "var(--color-bg)" : "transparent";
+        el.setAttribute("aria-pressed", on ? "true" : "false");
+        var img = el.querySelector("img");
+        if (img) img.style.opacity = on ? "1" : "0.72";
+      });
+    };
+    Array.prototype.forEach.call(gBtns, function (el, i) {
+      el.addEventListener("click", function () { setGal(i); });
+      el.addEventListener("mouseenter", function () { setGal(i); });
+      el.addEventListener("focus", function () { setGal(i); });
+    });
+  }
+
 })();
