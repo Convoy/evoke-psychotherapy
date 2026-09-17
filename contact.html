@@ -115,6 +115,24 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
 [data-map][data-active="blue"] .map-card[data-card="blue"],
 [data-map][data-active="green"] .map-card[data-card="green"]{display:block}
 @media (max-width:899px){[data-map] svg{display:none}}
+
+[data-btn]{transition:transform .2s cubic-bezier(.22,.61,.36,1),background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
+[data-btn]:hover,[data-btn]:focus-visible{transform:translateY(-3px) scale(1.025)}
+[data-btn="pri"]:hover,[data-btn="pri"]:focus-visible{background:var(--color-accent-700) !important;color:#fff !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.55)}
+[data-btn="sec"]:hover,[data-btn="sec"]:focus-visible{border-color:var(--color-accent) !important;color:var(--color-accent-700) !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.4)}
+[data-btn="inv"]:hover,[data-btn="inv"]:focus-visible{background:#fff !important;color:var(--color-accent-700) !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.45)}
+[data-btn="light"]:hover,[data-btn="light"]:focus-visible{border-color:#fff !important;color:#fff !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){
+  [data-btn]{transition:none}
+  [data-btn]:hover,[data-btn]:focus-visible{transform:none}
+}
+
+[data-navlink]{transition:transform .18s cubic-bezier(.22,.61,.36,1),color .18s ease,border-bottom-color .18s ease}
+[data-navlink]:hover,[data-navlink]:focus-visible{transform:translateY(-2px);color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent) !important}
+@media (prefers-reduced-motion:reduce){
+  [data-navlink]{transition:none}
+  [data-navlink]:hover,[data-navlink]:focus-visible{transform:none}
+}
 </style>
 </head>
 <body>
@@ -127,12 +145,12 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       </a>
 
       <nav class="nav-desktop">
-        <a href="index.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Home</a>
-        <a href="about.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">About</a>
-        <a href="team.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Our Team</a>
-        <a href="services.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Services</a>
-        <a href="contact.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="x2">Book a session</a>
+        <a href="index.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Home</a>
+        <a href="about.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">About</a>
+        <a href="team.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Our Team</a>
+        <a href="services.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Services</a>
+        <a href="contact.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Contact &amp; FAQ</a>
+        <a href="contact.html#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="x2">Book a session</a>
       </nav>
 
       <button type="button" class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-nav-panel">
@@ -149,7 +167,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <a href="team.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Our Team</a>
         <a href="services.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Services</a>
         <a href="contact.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-accent-700);border-bottom:1px solid var(--color-divider)">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="margin-top:20px;display:flex;align-items:center;min-height:56px;padding:16px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px">Book a session</a>
+        <a href="contact.html#consult" data-btn="pri" style="margin-top:20px;display:flex;align-items:center;min-height:56px;padding:16px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px">Book a session</a>
       </nav>
     </div>
   </header>
@@ -182,7 +200,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <p style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 14px">02</p>
         <h3 style="font-size:19px;margin:0 0 10px">Free 15-minute consult</h3>
         <p style="font-size:15px;margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">A short call to talk about what you are looking for and which of our therapists fits best. No cost, no obligation.</p>
-        <a href="#consult" style="display:inline-flex;align-items:center;padding:13px 22px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x3">Request a call</a>
+        <a href="#consult" data-btn="sec" style="display:inline-flex;align-items:center;padding:13px 22px;border:1px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x3">Request a call</a>
       </div>
     </div>
   </section>
@@ -320,7 +338,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Anything you would like us to know</span>
           <textarea name="message" rows="4" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0;resize:vertical"></textarea>
         </label>
-        <button type="submit" style="justify-self:start;padding:15px 28px;background:var(--color-accent);color:#fff;border:0;font-family:var(--font-heading);font-weight:600;font-size:15px;cursor:pointer">Send request</button>
+        <button type="submit" data-btn="pri" style="justify-self:start;padding:15px 28px;background:var(--color-accent);color:#fff;border:0;font-family:var(--font-heading);font-weight:600;font-size:15px;cursor:pointer">Send request</button>
         <p style="margin:0;font-size:12px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Please do not include sensitive clinical details in this form. It is not a secure channel.</p>
       </form>
     </div>
@@ -398,7 +416,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 14px;max-width:24ch;color:#fff;text-wrap:pretty">Whenever you are ready.</h2>
         <p style="margin:0;font-size:17px;max-width:52ch;color:rgba(255,255,255,0.92)">There is no wrong time to start, and no need to have the words figured out first.</p>
       </div>
-      <a href="tel:2699297486" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x3">Call 269-929-7486</a>
+      <a href="tel:2699297486" data-btn="inv" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x3">Call 269-929-7486</a>
     </div>
   </section>
 

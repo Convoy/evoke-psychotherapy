@@ -82,6 +82,12 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
   100%{transform:scale(1.14) translate3d(-1.6%,-1%,0)}
 }
 @keyframes panelDrop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+[data-bio-arrow]{transition:transform .24s cubic-bezier(.22,.61,.36,1)}
+a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7px)}
+@media (prefers-reduced-motion:reduce){
+  [data-bio-arrow]{transition:none}
+  a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:none}
+}
 [data-photo-zoom] img{transition:transform .55s cubic-bezier(.22,.61,.36,1)}
 [data-photo-zoom]:hover img,[data-photo-zoom]:focus-visible img{transform:scale(1.045)}
 @media (prefers-reduced-motion:reduce){
@@ -122,6 +128,24 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
 .x7:hover{border-color:var(--color-accent) !important}
 .x8:focus-visible{outline:2px solid var(--color-accent) !important;outline-offset:2px !important}
 .x9:hover{background:var(--color-accent-100) !important}
+
+[data-btn]{transition:transform .2s cubic-bezier(.22,.61,.36,1),background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
+[data-btn]:hover,[data-btn]:focus-visible{transform:translateY(-3px) scale(1.025)}
+[data-btn="pri"]:hover,[data-btn="pri"]:focus-visible{background:var(--color-accent-700) !important;color:#fff !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.55)}
+[data-btn="sec"]:hover,[data-btn="sec"]:focus-visible{border-color:var(--color-accent) !important;color:var(--color-accent-700) !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.4)}
+[data-btn="inv"]:hover,[data-btn="inv"]:focus-visible{background:#fff !important;color:var(--color-accent-700) !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.45)}
+[data-btn="light"]:hover,[data-btn="light"]:focus-visible{border-color:#fff !important;color:#fff !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){
+  [data-btn]{transition:none}
+  [data-btn]:hover,[data-btn]:focus-visible{transform:none}
+}
+
+[data-navlink]{transition:transform .18s cubic-bezier(.22,.61,.36,1),color .18s ease,border-bottom-color .18s ease}
+[data-navlink]:hover,[data-navlink]:focus-visible{transform:translateY(-2px);color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent) !important}
+@media (prefers-reduced-motion:reduce){
+  [data-navlink]{transition:none}
+  [data-navlink]:hover,[data-navlink]:focus-visible{transform:none}
+}
 </style>
 </head>
 <body>
@@ -134,12 +158,12 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       </a>
 
       <nav class="nav-desktop">
-        <a href="index.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Home</a>
-        <a href="about.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">About</a>
-        <a href="team.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Our Team</a>
-        <a href="services.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Services</a>
-        <a href="contact.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="x2">Book a session</a>
+        <a href="index.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Home</a>
+        <a href="about.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">About</a>
+        <a href="team.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Our Team</a>
+        <a href="services.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Services</a>
+        <a href="contact.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Contact &amp; FAQ</a>
+        <a href="contact.html#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="x2">Book a session</a>
       </nav>
 
       <button type="button" class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-nav-panel">
@@ -156,7 +180,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <a href="team.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Our Team</a>
         <a href="services.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Services</a>
         <a href="contact.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="margin-top:20px;display:flex;align-items:center;min-height:56px;padding:16px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px">Book a session</a>
+        <a href="contact.html#consult" data-btn="pri" style="margin-top:20px;display:flex;align-items:center;min-height:56px;padding:16px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px">Book a session</a>
       </nav>
     </div>
   </header>
@@ -175,8 +199,8 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h1 style="font-size:clamp(42px,7.4vw,96px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 clamp(22px,3vw,34px);max-width:15ch;color:#fff;text-wrap:pretty">Therapy that meets you where you are.</h1>
         <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.6;max-width:52ch;margin:0 0 clamp(30px,4vw,42px);color:#f4f2ee">A Kalamazoo practice offering individual and couples therapy, plus clinical supervision for limited licensed counselors. Unhurried, collaborative, and built on the belief that you already carry a great deal of what you need.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-          <a href="contact.html#consult" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x2">Book a free 15-minute consult</a>
-          <a href="services.html" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x3">See services</a>
+          <a href="contact.html#consult" data-btn="pri" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x2">Book a free 15-minute consult</a>
+          <a href="services.html" data-btn="light" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x3">See services</a>
         </div>
       </div>
     </div>
@@ -202,7 +226,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Individual therapy</p>
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.02;margin:0 0 24px;max-width:16ch;text-wrap:pretty">Weekly work, at your pace.</h2>
         <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Fifty-three-minute sessions for adults working through anxiety, trauma, depression, grief, and the transitions that rearrange a life. Relational, trauma-informed, and adapted to you rather than to a protocol.</p>
-        <a href="services.html#therapy" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x2">Learn about therapy</a>
+        <a href="services.html#therapy" data-btn="pri" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x2">Learn about therapy</a>
       </div>
       <div style="min-height:min(72svh,620px);position:relative;overflow:hidden;background:var(--color-surface)">
         <div data-parallax="0.09" style="position:absolute;inset:-9% 0;will-change:transform">
@@ -223,7 +247,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Clinical supervision</p>
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.02;margin:0 0 24px;max-width:16ch;text-wrap:pretty">Support for the clinician you are becoming.</h2>
         <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Board-approved supervision for therapists accruing hours toward full licensure in Michigan, including limited licensed professional counselors, social workers, and clinical mental health counselors.</p>
-        <a href="services.html#supervision" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Learn about supervision</a>
+        <a href="services.html#supervision" data-btn="sec" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Learn about supervision</a>
       </div>
     </div>
   </section>
@@ -283,7 +307,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Our team</p>
         <h2 style="font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0 0 22px;max-width:20ch;text-wrap:pretty">Several specialties under one roof.</h2>
         <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 30px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">More than fifty-five years of combined clinical experience. Within the group there is specialty training in anxiety, depression, trauma, addiction and substance use, pregnancy and postpartum mental health, grief and traumatic loss, anger, crisis response, family dynamics, parenting, and couples work. The aim is that what you bring can be met here, by the clinician trained for it.</p>
-        <a href="team.html" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Meet the team</a>
+        <a href="team.html" data-btn="sec" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Meet the team</a>
       </div>
 
       <div data-reveal="1" data-gallery style="display:flex;flex-direction:column;border:2px solid var(--color-divider);background:var(--color-bg);padding:clamp(20px,2.4vw,30px)">
@@ -307,7 +331,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
                 <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
                   <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Attachment-focused depth work with intellectually curious adults, couples, and people carrying the weight of demanding careers.</p>
                 </div>
-                <a href="team.html#lori" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Lori’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+                <a href="team.html#lori" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Lori’s bio<span data-bio-arrow style="font-size:17px;line-height:1">&rarr;</span></a>
               </div>
             
               <div data-gal-cap style="display:none">
@@ -316,7 +340,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
                 <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
                   <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Nearly a decade in adolescent and family mental health, substance use, and trauma. Sees clients in English or Spanish.</p>
                 </div>
-                <a href="team.html#victoria" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Victoria’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+                <a href="team.html#victoria" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Victoria’s bio<span data-bio-arrow style="font-size:17px;line-height:1">&rarr;</span></a>
               </div>
             
               <div data-gal-cap style="display:none">
@@ -325,7 +349,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
                 <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
                   <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Nineteen years of clinical practice, with specialty training in substance use, anxiety, and the perinatal period.</p>
                 </div>
-                <a href="team.html#tiffany" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Tiffany’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+                <a href="team.html#tiffany" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Tiffany’s bio<span data-bio-arrow style="font-size:17px;line-height:1">&rarr;</span></a>
               </div>
             
               <div data-gal-cap style="display:none">
@@ -334,7 +358,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
                 <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
                   <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Sixteen years of frontline experience with anger, anxiety, depression, and addiction, through cognitive-behavioral and dialectical therapies.</p>
                 </div>
-                <a href="team.html#james" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read James’s bio<span style="font-size:17px;line-height:1">&rarr;</span></a>
+                <a href="team.html#james" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read James’s bio<span data-bio-arrow style="font-size:17px;line-height:1">&rarr;</span></a>
               </div>
             
           </div>
@@ -381,7 +405,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.03;margin:0 0 18px;max-width:20ch;color:#fff;text-wrap:pretty">The first step is a fifteen-minute conversation.</h2>
         <p style="margin:0;font-size:17px;line-height:1.7;max-width:52ch;color:#fff">No cost, no obligation. We talk about what you are looking for and whether working together makes sense.</p>
       </div>
-      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x9">Book a consult</a>
+      <a href="contact.html#consult" data-btn="inv" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x9">Book a consult</a>
     </div>
   </section>
 

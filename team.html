@@ -248,6 +248,24 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
 .x2:hover{background:var(--color-accent-600) !important}
 .x3:hover{color:var(--color-accent-700) !important}
 .x4:hover{background:var(--color-accent-100) !important}
+
+[data-btn]{transition:transform .2s cubic-bezier(.22,.61,.36,1),background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
+[data-btn]:hover,[data-btn]:focus-visible{transform:translateY(-3px) scale(1.025)}
+[data-btn="pri"]:hover,[data-btn="pri"]:focus-visible{background:var(--color-accent-700) !important;color:#fff !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.55)}
+[data-btn="sec"]:hover,[data-btn="sec"]:focus-visible{border-color:var(--color-accent) !important;color:var(--color-accent-700) !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.4)}
+[data-btn="inv"]:hover,[data-btn="inv"]:focus-visible{background:#fff !important;color:var(--color-accent-700) !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.45)}
+[data-btn="light"]:hover,[data-btn="light"]:focus-visible{border-color:#fff !important;color:#fff !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){
+  [data-btn]{transition:none}
+  [data-btn]:hover,[data-btn]:focus-visible{transform:none}
+}
+
+[data-navlink]{transition:transform .18s cubic-bezier(.22,.61,.36,1),color .18s ease,border-bottom-color .18s ease}
+[data-navlink]:hover,[data-navlink]:focus-visible{transform:translateY(-2px);color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent) !important}
+@media (prefers-reduced-motion:reduce){
+  [data-navlink]{transition:none}
+  [data-navlink]:hover,[data-navlink]:focus-visible{transform:none}
+}
 </style>
 </head>
 <body>
@@ -260,12 +278,12 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
       </a>
 
       <nav class="nav-desktop">
-        <a href="index.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Home</a>
-        <a href="about.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">About</a>
-        <a href="team.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Our Team</a>
-        <a href="services.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Services</a>
-        <a href="contact.html" style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="x2">Book a session</a>
+        <a href="index.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Home</a>
+        <a href="about.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">About</a>
+        <a href="team.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-accent-700);font-weight:600;border-bottom:2px solid var(--color-accent)">Our Team</a>
+        <a href="services.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Services</a>
+        <a href="contact.html" data-navlink style="padding:10px 0;font-size:14px;white-space:nowrap;text-decoration:none;color:var(--color-text);border-bottom:2px solid transparent" class="x1">Contact &amp; FAQ</a>
+        <a href="contact.html#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:12px 20px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px;white-space:nowrap" class="x2">Book a session</a>
       </nav>
 
       <button type="button" class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-nav-panel">
@@ -282,7 +300,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <a href="team.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-accent-700);border-bottom:1px solid var(--color-divider)">Our Team</a>
         <a href="services.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Services</a>
         <a href="contact.html" style="padding:18px 0;font-family:var(--font-heading);font-weight:600;font-size:20px;text-decoration:none;color:var(--color-text);border-bottom:1px solid var(--color-divider)">Contact &amp; FAQ</a>
-        <a href="contact.html#consult" style="margin-top:20px;display:flex;align-items:center;min-height:56px;padding:16px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px">Book a session</a>
+        <a href="contact.html#consult" data-btn="pri" style="margin-top:20px;display:flex;align-items:center;min-height:56px;padding:16px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px">Book a session</a>
       </nav>
     </div>
   </header>
@@ -420,7 +438,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
             <div>
               <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Sessions</h4>
               <p style="font-size:15px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide. Also licensed in Virginia, with virtual sessions for clients located there.</p>
-              <a href="contact.html?therapist=Lori%20Guidone#consult" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Lori</a>
+              <a href="contact.html?therapist=Lori%20Guidone#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Lori</a>
             </div>
           </div>
         </div>
@@ -487,7 +505,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
             <div>
               <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Sessions</h4>
               <p style="font-size:15px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide.</p>
-              <a href="contact.html?therapist=Victoria%20Orbe#consult" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Victoria</a>
+              <a href="contact.html?therapist=Victoria%20Orbe#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Victoria</a>
             </div>
           </div>
         </div>
@@ -550,7 +568,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
             <div>
               <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Sessions</h4>
               <p style="font-size:15px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">53 minutes, weekly or bi-weekly. Telehealth throughout Michigan.</p>
-              <a href="contact.html?therapist=Tiffany%20Scurto#consult" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Tiffany</a>
+              <a href="contact.html?therapist=Tiffany%20Scurto#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request Tiffany</a>
             </div>
           </div>
         </div>
@@ -607,7 +625,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
             <div>
               <h4 style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin:0 0 12px">Sessions</h4>
               <p style="font-size:15px;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">53 minutes, weekly or bi-weekly. In person in Kalamazoo or telehealth statewide.</p>
-              <a href="contact.html?therapist=James%20Triumph#consult" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request James</a>
+              <a href="contact.html?therapist=James%20Triumph#consult" data-btn="pri" style="display:inline-flex;align-items:center;padding:13px 22px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:14px" class="x2">Request James</a>
             </div>
           </div>
         </div>
@@ -842,7 +860,7 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
         <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 14px;max-width:22ch;color:#fff;text-wrap:pretty">Not sure who to ask for?</h2>
         <p style="margin:0;font-size:17px;max-width:52ch;color:rgba(255,255,255,0.92)">Tell us what you are looking for and we will match you with the clinician who fits best.</p>
       </div>
-      <a href="contact.html#consult" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x4">Request a consult</a>
+      <a href="contact.html#consult" data-btn="inv" style="flex:0 1 auto;display:inline-flex;align-items:center;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x4">Request a consult</a>
     </div>
   </section>
 
