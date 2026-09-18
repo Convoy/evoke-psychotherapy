@@ -102,6 +102,24 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
 @media (prefers-reduced-motion:reduce){
   [data-hero-drift]{animation:none !important;transform:none !important}
 }
+
+[data-btn]{transition:transform .2s cubic-bezier(.22,.61,.36,1),background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
+[data-btn]:hover,[data-btn]:focus-visible{transform:translateY(-3px) scale(1.025)}
+[data-btn="pri"]:hover,[data-btn="pri"]:focus-visible{background:var(--color-accent-700) !important;color:#fff !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.55)}
+[data-btn="sec"]:hover,[data-btn="sec"]:focus-visible{border-color:var(--color-accent) !important;color:var(--color-accent-700) !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.4)}
+[data-btn="inv"]:hover,[data-btn="inv"]:focus-visible{background:#fff !important;color:var(--color-accent-700) !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.45)}
+[data-btn="light"]:hover,[data-btn="light"]:focus-visible{border-color:#fff !important;color:#fff !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){
+  [data-btn]{transition:none}
+  [data-btn]:hover,[data-btn]:focus-visible{transform:none}
+}
+
+[data-navlink]{transition:transform .18s cubic-bezier(.22,.61,.36,1),color .18s ease,border-bottom-color .18s ease}
+[data-navlink]:hover,[data-navlink]:focus-visible{transform:translateY(-2px);color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent) !important}
+@media (prefers-reduced-motion:reduce){
+  [data-navlink]{transition:none}
+  [data-navlink]:hover,[data-navlink]:focus-visible{transform:none}
+}
 .site-header{position:sticky;top:0;z-index:30;background:var(--color-bg);border-bottom:2px solid var(--color-divider);box-shadow:none;transition:box-shadow .3s ease}
 .site-header.compact{box-shadow:0 6px 24px rgba(44,47,58,0.10)}
 .site-logo{height:clamp(46px,7.5vw,104px);width:auto;transition:height .3s cubic-bezier(.22,.61,.36,1)}
@@ -122,30 +140,12 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
 .x1:hover{color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent-300) !important}
 .x2:hover{background:var(--color-accent-600) !important}
 .x3:hover{background:rgba(255,255,255,0.14) !important;border-color:#fff !important}
-.x4:hover{background:var(--color-accent-100) !important;border-color:var(--color-accent-400) !important}
-.x5:hover{background:var(--color-accent-100) !important;padding-left:12px !important}
+.x4:hover{background:var(--color-accent-100) !important;padding-left:12px !important}
+.x5:hover{background:var(--color-accent-100) !important;border-color:var(--color-accent-400) !important}
 .x6:hover{border-bottom-color:var(--color-accent) !important;color:var(--color-accent-700) !important}
 .x7:hover{border-color:var(--color-accent) !important}
 .x8:focus-visible{outline:2px solid var(--color-accent) !important;outline-offset:2px !important}
 .x9:hover{background:var(--color-accent-100) !important}
-
-[data-btn]{transition:transform .2s cubic-bezier(.22,.61,.36,1),background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease}
-[data-btn]:hover,[data-btn]:focus-visible{transform:translateY(-3px) scale(1.025)}
-[data-btn="pri"]:hover,[data-btn="pri"]:focus-visible{background:var(--color-accent-700) !important;color:#fff !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.55)}
-[data-btn="sec"]:hover,[data-btn="sec"]:focus-visible{border-color:var(--color-accent) !important;color:var(--color-accent-700) !important;box-shadow:0 10px 22px -12px rgba(27,29,34,.4)}
-[data-btn="inv"]:hover,[data-btn="inv"]:focus-visible{background:#fff !important;color:var(--color-accent-700) !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.45)}
-[data-btn="light"]:hover,[data-btn="light"]:focus-visible{border-color:#fff !important;color:#fff !important;box-shadow:0 12px 26px -14px rgba(0,0,0,.4)}
-@media (prefers-reduced-motion:reduce){
-  [data-btn]{transition:none}
-  [data-btn]:hover,[data-btn]:focus-visible{transform:none}
-}
-
-[data-navlink]{transition:transform .18s cubic-bezier(.22,.61,.36,1),color .18s ease,border-bottom-color .18s ease}
-[data-navlink]:hover,[data-navlink]:focus-visible{transform:translateY(-2px);color:var(--color-accent-700) !important;border-bottom-color:var(--color-accent) !important}
-@media (prefers-reduced-motion:reduce){
-  [data-navlink]{transition:none}
-  [data-navlink]:hover,[data-navlink]:focus-visible{transform:none}
-}
 </style>
 </head>
 <body>
@@ -220,34 +220,20 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
     </div>
   </section>
 
-  <section style="border-bottom:2px solid var(--color-divider)">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));align-items:stretch">
-      <div data-reveal="1" style="padding:clamp(52px,8vw,96px) clamp(20px,4vw,32px);display:flex;flex-direction:column;justify-content:center;justify-self:end;width:100%;max-width:620px">
-        <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Individual therapy</p>
-        <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.02;margin:0 0 24px;max-width:16ch;text-wrap:pretty">Weekly work, at your pace.</h2>
-        <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Fifty-three-minute sessions for adults working through anxiety, trauma, depression, grief, and the transitions that rearrange a life. Relational, trauma-informed, and adapted to you rather than to a protocol.</p>
-        <a href="services.html#therapy" data-btn="pri" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;background:var(--color-accent);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x2">Learn about therapy</a>
-      </div>
-      <div style="min-height:min(72svh,620px);position:relative;overflow:hidden;background:var(--color-surface)">
-        <div data-parallax="0.09" style="position:absolute;inset:-9% 0;will-change:transform">
+  <section style="border-bottom:2px solid var(--color-divider);position:relative;background:var(--ink-deep)">
+    <div style="position:relative;min-height:min(78svh,720px);display:flex;align-items:flex-end;overflow:hidden">
+      <div data-parallax="0.07" style="position:absolute;inset:-7% 0;will-change:transform">
+        <div data-hero-drift="true" style="position:absolute;inset:0;will-change:transform;animation:heroDrift 58s ease-in-out infinite;animation-delay:-14s">
           <img src="assets/evoke-therapy-opt.webp" alt="A therapy room with two chairs and soft daylight" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </div>
-    </div>
-  </section>
-
-  <section style="border-bottom:2px solid var(--color-divider)">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));align-items:stretch">
-      <div style="min-height:min(72svh,620px);position:relative;overflow:hidden;background:var(--color-surface);order:0">
-        <div data-parallax="0.09" style="position:absolute;inset:-9% 0;will-change:transform">
-          <img src="assets/evoke-supervision-desk.webp" alt="A lavender desk set with pens and an evoke psychotherapy card at the practice front desk" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
-        </div>
-      </div>
-      <div data-reveal="1" style="padding:clamp(52px,8vw,96px) clamp(20px,4vw,32px);display:flex;flex-direction:column;justify-content:center;width:100%;max-width:620px">
-        <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Clinical supervision</p>
-        <h2 style="font-size:clamp(30px,4.4vw,58px);line-height:1.02;margin:0 0 24px;max-width:16ch;text-wrap:pretty">Support for the clinician you are becoming.</h2>
-        <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 32px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Board-approved supervision for therapists accruing hours toward full licensure in Michigan, including limited licensed professional counselors, social workers, and clinical mental health counselors.</p>
-        <a href="services.html#supervision" data-btn="sec" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Learn about supervision</a>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(27,29,34,0.92) 0%,rgba(27,29,34,0.86) 34%,rgba(27,29,34,0.66) 56%,rgba(27,29,34,0.24) 80%,rgba(27,29,34,0) 100%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(27,29,34,0.82) 0%,rgba(27,29,34,0.62) 34%,rgba(27,29,34,0.18) 64%,rgba(27,29,34,0) 84%)"></div>
+      <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:clamp(80px,13vw,150px) clamp(20px,4vw,32px) clamp(40px,5vw,64px)">
+        <p data-reveal="1" style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#f0e6d8;margin:0 0 18px">Individual therapy</p>
+        <h2 data-reveal="1" style="font-size:clamp(32px,5.2vw,64px);line-height:1;letter-spacing:-0.035em;margin:0 0 22px;max-width:18ch;color:#fff;text-wrap:pretty">Weekly work, at your pace.</h2>
+        <p data-reveal="1" style="font-size:clamp(16px,1.4vw,19px);line-height:1.65;max-width:54ch;margin:0 0 clamp(26px,3vw,34px);color:#f4f2ee">Fifty-three-minute sessions for adults working through anxiety, trauma, depression, grief, and the transitions that rearrange a life. Relational, trauma-informed, and adapted to you rather than to a protocol.</p>
+        <a href="services.html#therapy" data-btn="light" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x3">Learn about therapy</a>
       </div>
     </div>
   </section>
@@ -259,13 +245,13 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
         <p style="font-size:15px;margin:0;color:color-mix(in srgb,var(--color-text) 75%,transparent)">Young adults to elders across Michigan. If what brought you here is not on this list, it still belongs in the room.</p>
       </div>
       <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 clamp(24px,3vw,44px);border-top:2px solid var(--color-divider)">
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Anxiety</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Trauma</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Depression</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Grief</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Life transitions</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Young adults to elders</div>
-        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x5">Couples</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Anxiety</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Trauma</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Depression</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Grief</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Life transitions</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Young adults to elders</div>
+        <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider);transition:background .2s,padding-left .2s" class="x4">Couples</div>
         <div style="padding:18px 4px;font-size:clamp(16px,1.5vw,19px);border-bottom:1px solid var(--color-divider)"><span style="display:inline-block;padding:3px 10px;background:linear-gradient(90deg,#f7c8c0 0 20%,#f8ddb8 20% 40%,#f5eeb6 40% 60%,#c9e2c2 60% 80%,#c6d3ec 80% 100%);color:var(--color-text)">LGBTQ+ affirming</span></div>
       </div>
     </div>
@@ -301,13 +287,32 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
   </section>
   
 
+  <section style="border-bottom:2px solid var(--color-divider);position:relative;background:var(--ink-deep)">
+    <div style="position:relative;min-height:min(78svh,720px);display:flex;align-items:flex-end;overflow:hidden">
+      <div data-parallax="0.07" style="position:absolute;inset:-7% 0;will-change:transform">
+        <div data-hero-drift="true" style="position:absolute;inset:0;will-change:transform;animation:heroDrift 64s ease-in-out infinite;animation-delay:-31s">
+          <img src="assets/couples-room-wide.webp" alt="Two armchairs facing each other beside a brick wall and window in the couples room" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(27,29,34,0.92) 0%,rgba(27,29,34,0.86) 34%,rgba(27,29,34,0.66) 56%,rgba(27,29,34,0.24) 80%,rgba(27,29,34,0) 100%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(27,29,34,0.82) 0%,rgba(27,29,34,0.62) 34%,rgba(27,29,34,0.18) 64%,rgba(27,29,34,0) 84%)"></div>
+      <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:clamp(80px,13vw,150px) clamp(20px,4vw,32px) clamp(40px,5vw,64px)">
+        <p data-reveal="1" style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#f0e6d8;margin:0 0 18px">Couples therapy</p>
+        <h2 data-reveal="1" style="font-size:clamp(32px,5.2vw,64px);line-height:1;letter-spacing:-0.035em;margin:0 0 22px;max-width:18ch;color:#fff;text-wrap:pretty">See the pattern, not the last argument.</h2>
+        <p data-reveal="1" style="font-size:clamp(16px,1.4vw,19px);line-height:1.65;max-width:54ch;margin:0 0 clamp(26px,3vw,34px);color:#f4f2ee">Work for partners who want to understand the pattern they keep landing in rather than relitigate the last argument. We slow the cycle down enough to see what each of you is protecting.</p>
+        <a href="services.html#couples" data-btn="light" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x3">Learn about couples therapy</a>
+      </div>
+    </div>
+  </section>
+
+
   <section style="border-bottom:2px solid var(--color-divider);background:var(--color-surface)">
     <div data-team-grid style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,4vw,32px);display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,72px);align-items:start">
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:flex-start">
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Our team</p>
         <h2 style="font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0 0 22px;max-width:20ch;text-wrap:pretty">Several specialties under one roof.</h2>
         <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 30px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">More than fifty-five years of combined clinical experience. Within the group there is specialty training in anxiety, depression, trauma, addiction and substance use, pregnancy and postpartum mental health, grief and traumatic loss, anger, crisis response, family dynamics, parenting, and couples work. The aim is that what you bring can be met here, by the clinician trained for it.</p>
-        <a href="team.html" data-btn="sec" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x4">Meet the team</a>
+        <a href="team.html" data-btn="sec" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x5">Meet the team</a>
       </div>
 
       <div data-reveal="1" data-gallery style="display:flex;flex-direction:column;border:2px solid var(--color-divider);background:var(--color-bg);padding:clamp(20px,2.4vw,30px)">
@@ -408,6 +413,25 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
       <a href="contact.html#consult" data-btn="inv" style="flex:0 1 auto;display:inline-flex;align-items:center;min-height:60px;padding:18px 32px;background:#fff;color:var(--color-accent-700);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:16px;white-space:nowrap" class="x9">Book a consult</a>
     </div>
   </section>
+
+  <section style="position:relative;background:var(--ink-deep)">
+    <div style="position:relative;min-height:min(78svh,720px);display:flex;align-items:flex-end;overflow:hidden">
+      <div data-parallax="0.07" style="position:absolute;inset:-7% 0;will-change:transform">
+        <div data-hero-drift="true" style="position:absolute;inset:0;will-change:transform;animation:heroDrift 70s ease-in-out infinite;animation-delay:-47s">
+          <img src="assets/evoke-supervision-desk.webp" alt="A lavender desk set with pens and an evoke psychotherapy card at the practice front desk" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(27,29,34,0.92) 0%,rgba(27,29,34,0.86) 34%,rgba(27,29,34,0.66) 56%,rgba(27,29,34,0.24) 80%,rgba(27,29,34,0) 100%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(27,29,34,0.82) 0%,rgba(27,29,34,0.62) 34%,rgba(27,29,34,0.18) 64%,rgba(27,29,34,0) 84%)"></div>
+      <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:clamp(80px,13vw,150px) clamp(20px,4vw,32px) clamp(40px,5vw,64px)">
+        <p data-reveal="1" style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#f0e6d8;margin:0 0 18px">Clinical supervision</p>
+        <h2 data-reveal="1" style="font-size:clamp(32px,5.2vw,64px);line-height:1;letter-spacing:-0.035em;margin:0 0 22px;max-width:18ch;color:#fff;text-wrap:pretty">Support for the clinician you are becoming.</h2>
+        <p data-reveal="1" style="font-size:clamp(16px,1.4vw,19px);line-height:1.65;max-width:54ch;margin:0 0 clamp(26px,3vw,34px);color:#f4f2ee">Board-approved supervision for therapists accruing hours toward full licensure in Michigan, including limited licensed professional counselors, social workers, and clinical mental health counselors.</p>
+        <a href="services.html#supervision" data-btn="light" style="display:inline-flex;align-items:center;min-height:56px;padding:16px 28px;border:2px solid rgba(255,255,255,0.6);color:#fff;text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x3">Learn about supervision</a>
+      </div>
+    </div>
+  </section>
+
 
   <footer style="border-top:2px solid var(--color-divider);background:var(--color-bg)">
     <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,64px) clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(28px,4vw,44px);align-items:start">
