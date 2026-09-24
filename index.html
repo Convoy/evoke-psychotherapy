@@ -97,7 +97,9 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
 @media (max-width:900px){
   [data-team-grid]{grid-template-columns:minmax(0,1fr) !important}
   [data-gal-cols]{grid-template-columns:minmax(0,1fr) !important}
-  [data-gal-strip]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  [data-gal-strip]{grid-template-columns:repeat(5,minmax(0,1fr)) !important;gap:8px !important}
+  [data-gal-btn]{padding:4px !important}
+  [data-gal-btn] > span:last-child{font-size:11px !important;min-height:34px !important;padding-top:6px !important}
 }
 @media (prefers-reduced-motion:reduce){
   [data-hero-drift]{animation:none !important;transform:none !important}
@@ -311,7 +313,7 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:flex-start">
         <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin:0 0 20px">Our team</p>
         <h2 style="font-size:clamp(30px,4.2vw,54px);line-height:1.03;margin:0 0 22px;max-width:20ch;text-wrap:pretty">Several specialties under one roof.</h2>
-        <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 30px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Nearly seventy years of combined clinical experience. Within the group there is specialty training in anxiety, depression, trauma, addiction and substance use, pregnancy and postpartum mental health, grief and traumatic loss, anger, crisis response, family dynamics, parenting, and couples work. The aim is that what you bring can be met here, by the clinician trained for it.</p>
+        <p style="font-size:17px;line-height:1.7;max-width:52ch;margin:0 0 30px;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Nearly seventy-five years of combined clinical experience. Within the group there is specialty training in anxiety, depression, trauma, addiction and substance use, pregnancy and postpartum mental health, grief and traumatic loss, anger, crisis response, family dynamics, parenting, and couples work. The aim is that what you bring can be met here, by the clinician trained for it.</p>
         <a href="team.html" data-btn="sec" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border:2px solid var(--color-divider);color:var(--color-text);text-decoration:none;font-family:var(--font-heading);font-weight:600;font-size:15px" class="x5">Meet the team</a>
       </div>
 
@@ -320,6 +322,8 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
           <div style="position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
             
               <img src="assets/lori-garden-opt.webp" alt="Lori Guidone" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 420ms ease">
+            
+              <img src="assets/kelsey-garden.webp" alt="Kelsey Harness" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 420ms ease">
             
               <img src="assets/victoria-garden.webp" alt="Victoria Orbe" data-gal-photo loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 420ms ease">
             
@@ -337,6 +341,15 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
                   <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Attachment-focused depth work with intellectually curious adults, couples, and people carrying the weight of demanding careers.</p>
                 </div>
                 <a href="team.html#lori" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Lori’s bio<span data-bio-arrow style="font-size:17px;line-height:1">&rarr;</span></a>
+              </div>
+            
+              <div data-gal-cap style="display:none">
+                <h3 style="font-size:clamp(20px,1.7vw,24px);line-height:1.15;margin:0 0 8px;text-wrap:pretty">Kelsey Harness, LMSW, MA, CFLE</h3>
+                <p style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin:0 0 16px">Therapist</p>
+                <div style="border-top:1px solid var(--color-divider);padding-top:16px;margin-bottom:18px">
+                  <p style="font-size:15px;line-height:1.7;margin:0;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Crisis response, trauma, and grief, with a holistic, strengths-based approach for clients of all ages and stages of life.</p>
+                </div>
+                <a href="team.html#kelsey" style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--indigo-deep);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px" class="x6">Read Kelsey’s bio<span data-bio-arrow style="font-size:17px;line-height:1">&rarr;</span></a>
               </div>
             
               <div data-gal-cap style="display:none">
@@ -369,13 +382,20 @@ a:hover [data-bio-arrow],a:focus-visible [data-bio-arrow]{transform:translateX(7
           </div>
         </div>
 
-        <div data-gal-strip data-gal-count="4" style="margin-top:clamp(22px,2.6vw,32px);border-top:2px solid var(--color-divider);padding-top:clamp(18px,2vw,24px);display:grid;justify-content:center;gap:clamp(10px,1.2vw,18px);grid-template-columns:repeat(4,minmax(0,142px))">
+        <div data-gal-strip data-gal-count="5" style="margin-top:clamp(22px,2.6vw,32px);border-top:2px solid var(--color-divider);padding-top:clamp(18px,2vw,24px);display:grid;justify-content:center;gap:clamp(10px,1.2vw,18px);grid-template-columns:repeat(5,minmax(0,142px))">
           
             <button type="button" data-gal-btn aria-pressed="true" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:var(--color-bg);border:2px solid var(--color-accent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
               <span style="display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
                 <img src="assets/lori-garden-opt.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 180ms ease;opacity:1">
               </span>
               <span style="display:block;padding:10px 0 0;min-height:42px;font-family:var(--font-heading);font-weight:600;font-size:13px;line-height:1.25;text-align:left;color:var(--color-text)">Lori Guidone</span>
+            </button>
+          
+            <button type="button" data-gal-btn aria-pressed="false" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:transparent;border:2px solid color-mix(in srgb,var(--color-text) 16%,transparent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
+              <span style="display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--color-bg)">
+                <img src="assets/kelsey-garden.webp" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 180ms ease;opacity:0.72">
+              </span>
+              <span style="display:block;padding:10px 0 0;min-height:42px;font-family:var(--font-heading);font-weight:600;font-size:13px;line-height:1.25;text-align:left;color:var(--color-text)">Kelsey Harness</span>
             </button>
           
             <button type="button" data-gal-btn aria-pressed="false" style="appearance:none;padding:8px;cursor:pointer;display:grid;align-content:start;text-align:left;background:transparent;border:2px solid color-mix(in srgb,var(--color-text) 16%,transparent);transition:border-color 180ms ease,background 180ms ease" class="x7 x8">
