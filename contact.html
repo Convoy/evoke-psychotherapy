@@ -302,17 +302,17 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
           <label>Don't fill this out if you're human: <input name="bot-field"></label>
         </p>
         <label style="display:grid;gap:7px">
-          <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Name</span>
+          <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Name (required)</span>
           <input type="text" name="name" required="true" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0">
         </label>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px">
           <label style="display:grid;gap:7px">
-            <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Email</span>
+            <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Email (required)</span>
             <input type="email" name="email" required="true" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0">
           </label>
           <label style="display:grid;gap:7px">
-            <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Phone</span>
-            <input type="tel" name="phone" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0">
+            <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">Phone (required)</span>
+            <input type="tel" name="phone" required="true" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0">
           </label>
         </div>
         <label style="display:grid;gap:7px">
@@ -333,6 +333,18 @@ h1,h2,h3,h4{letter-spacing:-0.025em}
             <option>Couples therapy</option>
             <option>Clinical supervision</option>
             <option>Not sure yet</option>
+          </select>
+        </label>
+        <label style="display:grid;gap:7px">
+          <span style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600">How did you find us?</span>
+          <select name="referral-source" style="font-family:var(--font-body);font-size:16px;padding:12px 14px;border:1px solid var(--color-divider);background:#fff;color:var(--color-text);border-radius:0">
+            <option>Prefer not to say</option>
+            <option>Referral</option>
+            <option>Word of mouth</option>
+            <option>Psychology Today</option>
+            <option>Facebook</option>
+            <option>Google</option>
+            <option>Other</option>
           </select>
         </label>
         <label style="display:grid;gap:7px">
